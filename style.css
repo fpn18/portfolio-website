@@ -100,18 +100,20 @@ body {
 }
 
 .work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  align-items: stretch; /* Ensure all cards are vertically aligned */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* More space between cards */
+  align-items: center; /* Center cards horizontally */
 }
 
 .work-card {
+  width: 100%;
+  max-width: 600px; /* Limit card width for readability */
+  height: 500px; /* Increased height for bigger cards */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 370px; /* Fixed height for uniform size */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Even vertical spacing */
