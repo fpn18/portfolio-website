@@ -64,17 +64,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 600px;
-}
-
-.hero h1::after {
-  /* optional animated emoji pulse */
-  content: "👋";
-  animation: wave 2s infinite;
+/* Animated waving emoji */
+.wave-emoji {
   display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
 }
 
 @keyframes wave {
@@ -83,6 +77,13 @@ body {
   20% { transform: rotate(-10deg); }
   30% { transform: rotate(20deg); }
   40% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
 }
 
 /* Work Section */
