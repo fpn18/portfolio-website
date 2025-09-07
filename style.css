@@ -103,12 +103,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem; /* More space between cards */
-  align-items: center; /* Center cards horizontally */
+  align-items: stretch; /* Stretch cards to fill horizontal space */
 }
 
 .work-card {
-  width: 100%;
-  max-width: 600px; /* Limit card width for readability */
+  width: 100%; /* Fill the space inside content-wrapper */
   height: 500px; /* Increased height for bigger cards */
   border-radius: 16px;
   overflow: hidden;
@@ -179,4 +178,5 @@ body {
   padding-right: 0;
   font-size: 0.9rem;
   color: #888;
+}
 }
