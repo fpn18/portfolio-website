@@ -108,7 +108,7 @@ body {
 
 .work-card {
   width: 100%; /* Fill the space inside content-wrapper */
-  height: 500px; /* Increased height for bigger cards */
+  min-height: 350px; /* Optional: minimum height for content */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
