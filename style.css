@@ -60,7 +60,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
@@ -68,6 +68,21 @@ body {
   font-size: 1.2rem;
   color: #555;
   max-width: 600px;
+}
+
+.hero h1::after {
+  /* optional animated emoji pulse */
+  content: "👋";
+  animation: wave 2s infinite;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(20deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(20deg); }
+  40% { transform: rotate(0deg); }
 }
 
 /* Work Section */
