@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 2rem 6vw; /* Increased left/right padding using viewport width for responsiveness */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 3.5rem; /* Increased gap between navbar links */
 }
 
 .nav-links a {
@@ -42,6 +42,12 @@ body {
   opacity: 0.6;
 }
 
+/* Add a wrapper for main content */
+.content-wrapper {
+  margin-left: 6vw;
+  margin-right: 6vw;
+}
+
 /* Hero */
 .hero {
   height: 100vh;
@@ -50,7 +56,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: 0 2rem;
+  padding: 0;
 }
 
 .hero h1 {
@@ -66,7 +72,7 @@ body {
 
 /* Work Section */
 .work {
-  padding: 6rem 2rem;
+  padding: 6rem 0;
 }
 
 .work h2 {
@@ -138,6 +144,8 @@ body {
 .footer {
   text-align: center;
   padding: 2rem;
+  padding-left: 0;
+  padding-right: 0;
   font-size: 0.9rem;
   color: #888;
 }
