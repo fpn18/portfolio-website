@@ -98,6 +98,18 @@ body {
   font-size: 1.2rem;
 }
 
+.work h4 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.work h5 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .work-card p {
   margin: 0 1rem 1rem;
   font-size: 0.95rem;
@@ -107,6 +119,19 @@ body {
 .work-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Make work-card links fill the card and remove default anchor styles */
+.work-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure pointer cursor on hover */
+.work-card:hover,
+.work-card-link:hover .work-card {
+  cursor: pointer;
 }
 
 /* Footer */
