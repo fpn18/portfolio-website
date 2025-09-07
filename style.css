@@ -46,9 +46,9 @@ body {
 .content-wrapper {
   width: 100%;
   max-width: 100vw;
-  margin-left: 0;
-  margin-right: 0;
-  /* Remove left/right margins */
+  margin-left: 6vw;
+  margin-right: 6vw;
+  /* Use left/right margins for spacing from screen edge */
 }
 
 /* Hero */
@@ -105,21 +105,21 @@ body {
 .work-grid {
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* More space between cards */
-  align-items: stretch; /* Stretch cards to fill horizontal space */
+  gap: 3rem;
+  align-items: stretch;
   width: 100%;
 }
 
 .work-card {
   width: 100%; /* Fill the space inside content-wrapper */
-  min-height: 350px; /* Optional: minimum height for content */
+  min-height: 350px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Even vertical spacing */
+  justify-content: space-between;
   /* Remove max-width */
 }
 
