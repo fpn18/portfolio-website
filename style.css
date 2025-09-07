@@ -103,6 +103,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  align-items: stretch; /* Ensure all cards are vertically aligned */
 }
 
 .work-card {
@@ -113,7 +114,7 @@ body {
   height: 370px; /* Fixed height for uniform size */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Even vertical spacing */
 }
 
 .work-card img {
