@@ -181,7 +181,7 @@ body {
 }
 
 .problem {
-  margin-top: 2rem;
+  margin-top: 4rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -193,7 +193,7 @@ body {
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
   padding: 2.5rem 2rem;
-  margin: 0.5rem 0 0.5rem 0;
   max-width: 700px;
-  margin-right: -4rem auto 2rem auto;
+  margin: -4rem auto 2rem auto;
+  position: relative;
 }
