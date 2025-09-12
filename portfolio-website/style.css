@@ -214,6 +214,6 @@ body {
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
   padding: 2.5rem 2rem;
   max-width: 700px;
-  margin: -4rem auto 2rem auto;
+  margin: auto;
   position: relative;
 }
