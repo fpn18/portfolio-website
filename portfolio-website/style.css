@@ -54,28 +54,6 @@ body {
   /* Content is now centered and inside margins */
 }
 
-.heading {
-  height: 60vh;
-  display: flex;              /* enable flexbox */
-  flex-direction: column;
-  justify-content: center;    /* center vertically */
-  align-items: center;        /* center horizontally */
-  text-align: center;
-  padding: 0;
-}
-
-
-.heading h1 {
-  margin-bottom: 0.5rem;
-  font-size: 3.5rem;
-}
-
-.heading p {
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* Hero */
 .hero {
@@ -203,20 +181,86 @@ body {
   color: #888;
 }
 
-.problem {
-  margin-top: 4rem;
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+/* ==========================
+   DreamTeam Page Enhancements
+   ========================== */
+.dreamteam-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #f5f7fa 100%); /* soft gradient */
 }
 
-/* Card Background Style */
-.card-bg {
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+/* Heading */
+.dreamteam-page .heading {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.dreamteam-page .heading h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.dreamteam-page .heading p {
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 600px;
+}
+
+/* Accent bar under heading (Apple-style) */
+.dreamteam-page .heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #007aff;
+  margin: 1.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Card */
+.dreamteam-page .card-bg {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
   padding: 2.5rem 2rem;
-  max-width: 1000px;
+  max-width: 700px;
+  margin: -2rem auto 3rem auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dreamteam-page .card-bg:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+.dreamteam-page .card-bg h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #007aff;
+}
+
+/* Problem Section */
+.dreamteam-page .problem {
+  max-width: 700px;
   margin: 2rem auto;
-  position: relative;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.dreamteam-page .problem h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+/* Subtle divider */
+.dreamteam-page section + section {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 2rem;
 }
