@@ -40,3 +40,28 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(section);
   });
 });
+
+// Prevent multiple clicks on the same nav link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            // If clicking on a link to the current page, prevent default behavior
+            if (href.includes(currentPage) || (href.startsWith('#') && currentPage === 'index.html')) {
+                e.preventDefault();
+                
+                // Smooth scroll to section if it's an anchor link
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        });
+    });
+});
