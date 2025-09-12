@@ -1,14 +1,4 @@
-/* Card background for project intro */
-.card-bg {
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  padding: 2.5rem 2rem;
-  margin: 0.5rem 0 0.5rem 0;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 /* Reset and base */
 * {
   margin: 0;
@@ -197,7 +187,7 @@ body {
   margin-right: auto;
   padding: 0 1rem;
 }
-
+/* Card Background Style */
 .card-bg {
   background: #ffffff;
   border-radius: 18px;
