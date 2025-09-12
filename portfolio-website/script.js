@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Scroll-triggered animations (DreamTeam page)
   const animatedSections = document.querySelectorAll(
-    '.dreamteam-page .heading, .dreamteam-page .card-bg, .dreamteam-page .problem'
+    '.dreamteam-page .heading, .dreamteam-page .card-bg, .dreamteam-page .problem, scentinel-page .heading, .scentinel-page .card-bg, .scentinel-page .problem, vita-page .heading, .vita-page .card-bg, .vita-page .problem, tastetogether-page .heading, .tastetogether-page .card-bg, .tastetogether-page .problem'
   );
 
   const observer = new IntersectionObserver(
