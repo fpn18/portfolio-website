@@ -196,8 +196,21 @@ body {
   background: linear-gradient(180deg, #fdfdfd 0%, #3887ff 100%); /* soft gradient */
 }
 
+.scentinel-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #ffcc00 100%); /* soft gradient */
+}
+
+.vita-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #ff66cc 100%); /* soft gradient */
+}
+
+.tastetogether-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #33cc33 100%); /* soft gradient */
+}
+
+
 /* Heading */
-.dreamteam-page .heading {
+.dreamteam-page .heading, .scentinel-page .heading, .vita-page .heading, .tastetogether-page .heading {
   height: 55vh;
   display: flex;
   flex-direction: column;
@@ -207,21 +220,21 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.dreamteam-page .heading h1 {
+.dreamteam-page .heading h1, .scentinel-page .heading h1, .vita-page .heading h1, .tastetogether-page .heading h1 {
   font-size: 3rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 1rem;
 }
 
-.dreamteam-page .heading p {
+.dreamteam-page .heading p, .scentinel-page .heading p, .vita-page .heading p, .tastetogether-page .heading p {
   font-size: 1.25rem;
   color: #555;
   max-width: 600px;
 }
 
 /* Accent bar under heading (Apple-style) */
-.dreamteam-page .heading::after {
+.dreamteam-page .heading::after, .scentinel-page .heading::after, .vita-page .heading::after, .tastetogether-page .heading::after {
   content: "";
   display: block;
   width: 60px;
@@ -232,7 +245,7 @@ body {
 }
 
 /* Card */
-.dreamteam-page .card-bg {
+.dreamteam-page .card-bg, .scentinel-page .card-bg, .vita-page .card-bg, .tastetogether-page .card-bg {
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 8px 28px rgba(0,0,0,0.08);
@@ -242,33 +255,33 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.dreamteam-page .card-bg:hover {
+.dreamteam-page .card-bg:hover, .scentinel-page .card-bg:hover, .vita-page .card-bg:hover, .tastetogether-page .card-bg:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
 
-.dreamteam-page .card-bg h2 {
+.dreamteam-page .card-bg h2, .scentinel-page .card-bg h2, .vita-page .card-bg h2, .tastetogether-page .card-bg h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   color: #007aff;
 }
 
 /* Problem Section */
-.dreamteam-page .problem {
+.dreamteam-page .problem, .scentinel-page .problem, .vita-page .problem, .tastetogether-page .problem {
   max-width: 700px;
   margin: 2.5rem auto;
   padding: 0 2rem;
   text-align: left;
 }
 
-.dreamteam-page .problem h2 {
+.dreamteam-page .problem h2, .scentinel-page .problem h2, .vita-page .problem h2, .tastetogether-page .problem h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #111;
 }
 
 /* Subtle divider */
-.dreamteam-page section + section {
+.dreamteam-page section + section, .scentinel-page section + section, .vita-page section + section, .tastetogether-page section + section {
   border-top: 1px solid rgba(0,0,0,0.05);
   padding-top: 2rem;
 }
@@ -290,21 +303,21 @@ body {
 }
 
 /* Heading */
-.dreamteam-page .heading {
+.dreamteam-page .heading, .scentinel-page .heading, .vita-page .heading, .tastetogether-page .heading {
   animation: fadeUp 0.8s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0; /* ensure hidden before animation */
 }
 
 /* Card */
-.dreamteam-page .card-bg {
+.dreamteam-page .card-bg, .scentinel-page .card-bg, .vita-page .card-bg, .tastetogether-page .card-bg {
   animation: fadeUp 0.9s ease-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
 }
 
 /* Problem Section */
-.dreamteam-page .problem {
+.dreamteam-page .problem, .scentinel-page .problem, .vita-page .problem, .tastetogether-page .problem {
   animation: fadeUp 1s ease-out forwards;
   animation-delay: 0.8s;
   opacity: 0;
