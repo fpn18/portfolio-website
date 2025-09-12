@@ -66,7 +66,7 @@ body {
 
 
 .heading h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 3.5rem;
 }
 
@@ -206,10 +206,10 @@ body {
 .problem {
   margin-top: 4rem;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
+
 /* Card Background Style */
 .card-bg {
   background: #ffffff;
