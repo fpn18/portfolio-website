@@ -146,7 +146,7 @@ section {
 /* Animated waving emoji */
 .wave-emoji {
   display: inline-block;
-  animation: wave 2.5s ease-in-out infinite;
+  animation: wave 1.8s infinite;
   transform-origin: 70% 70%;
 }
 
