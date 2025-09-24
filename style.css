@@ -194,19 +194,19 @@ body {
    DreamTeam Page Enhancements
    ========================== */
 .dreamteam-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #007aff 50%); /* soft gradient */
+ background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 122, 255, 0.7) 100%); /* 70% opacity blue */
 }
 
 .scentinel-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #F7D501 50%); /* soft gradient */
+  background: linear-gradient(180deg, #fdfdfd 0%, #F7D501 100%); /* soft gradient */
 }
 
 .vita-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #F89B5A 50%); /* soft gradient */
+  background: linear-gradient(180deg, #fdfdfd 0%, #F89B5A 100%); /* soft gradient */
 }
 
 .tastetogether-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 50%); /* soft gradient */
+  background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 100%); /* soft gradient */
 }
 
 
@@ -247,14 +247,15 @@ body {
 
 /* Card */
 .dreamteam-page .card-bg, .scentinel-page .card-bg, .vita-page .card-bg, .tastetogether-page .card-bg {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-  padding: 2.5rem 2rem;
-  max-width: 1000px;
-  max-height: 300px;
-  margin: -2rem auto 3rem auto;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+background: #fff;
+border-radius: 20px;
+box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+padding: 1.5rem 2rem;
+max-width: 1000px;
+height: 180px; 
+margin: -2rem auto 3rem auto;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+overflow: hidden; 
 }
 
 .dreamteam-page .card-bg:hover, .scentinel-page .card-bg:hover, .vita-page .card-bg:hover, .tastetogether-page .card-bg:hover {
