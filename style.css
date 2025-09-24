@@ -1,13 +1,10 @@
+/* ==========================
+   Reset & Base
+   ========================== */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-section {
-    min-height: 100vh;
-    padding: 80px 0;
-}
-
-/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -21,12 +18,19 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
+section {
+  min-height: 100vh;
+  padding: 80px 0;
+}
+
+/* ==========================
+   Navbar
+   ========================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2rem 6vw; /* Increased left/right padding using viewport width for responsiveness */
+  padding: 2rem 6vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,10 +39,15 @@ body {
   z-index: 100;
 }
 
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 3.5rem; /* Increased gap between navbar links */
+  gap: 3.5rem;
 }
 
 .nav-links a {
@@ -52,18 +61,20 @@ body {
   opacity: 1;
 }
 
-/* Add a wrapper for main content */
+/* ==========================
+   Content Wrapper
+   ========================== */
 .content-wrapper {
-  max-width: 1200px; /* or your preferred max width */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 6vw;
   padding-right: 6vw;
-  /* Content is now centered and inside margins */
 }
 
-
-/* Hero */
+/* ==========================
+   Hero
+   ========================== */
 .hero {
   height: 100vh;
   display: flex;
@@ -79,6 +90,12 @@ body {
   margin-bottom: 1rem;
 }
 
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+}
+
 /* Animated waving emoji */
 .wave-emoji {
   display: inline-block;
@@ -87,23 +104,16 @@ body {
 }
 
 @keyframes wave {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
   20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
   40% { transform: rotate(-4deg); }
   50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 600px;
-}
-
-/* Work Section */
+/* ==========================
+   Work Section
+   ========================== */
 .work {
   padding: 6rem 0;
 }
@@ -116,44 +126,31 @@ body {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   width: 100%;
 }
 
 @media (max-width: 900px) {
   .work-grid {
-    grid-template-columns: 1fr; /* Stack cards on small screens */
+    grid-template-columns: 1fr;
   }
 }
 
 .work-card img {
   width: 100%;
-  height: 250px; /* Fixed image height */
+  height: 250px;
   object-fit: cover;
   display: block;
   border-radius: 25px;
 }
 
-/* Ensure all headings inside work-card have the same font size and margin */
 .work-card h3,
 .work-card h4,
 .work-card h5 {
   margin: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
-}
-
-.work h4 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.work h5 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
 }
 
 .work-card p {
@@ -167,50 +164,31 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Make work-card links fill the card and remove default anchor styles */
 .work-card-link {
   display: block;
   text-decoration: none;
   color: inherit;
 }
 
-/* Ensure pointer cursor on hover */
 .work-card:hover,
 .work-card-link:hover .work-card {
   cursor: pointer;
 }
 
-/* Footer */
+/* ==========================
+   Footer
+   ========================== */
 .footer {
   text-align: center;
-  padding: 2rem;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 2rem 0;
   font-size: 0.9rem;
   color: #888;
 }
 
 /* ==========================
-   DreamTeam Page Enhancements
+   Shared Project Page Styles
    ========================== */
-.dreamteam-page {
- background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 128, 128, 0.7) 100%); /* 70% opacity blue */
-}
-
-.scentinel-page {
-background: linear-gradient(180deg, #fdfdfd 0%, #F7D501 100%); / soft gradient /
-}
-
-.vita-page {
-background: linear-gradient(180deg, #fdfdfd 0%, #F89B5A 100%); / soft gradient /
-}
-
-.tastetogether-page {
-background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 100%); / soft gradient */
-}
-
-/* Heading */
-.dreamteam-page .heading, .scentinel-page .heading, .vita-page .heading, .tastetogether-page .heading {
+.project-page .heading {
   height: 55vh;
   display: flex;
   flex-direction: column;
@@ -218,92 +196,72 @@ background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 100%); / soft gradient *
   align-items: center;
   text-align: center;
   margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
-.dreamteam-page .heading h1, .scentinel-page .heading h1, .vita-page .heading h1, .tastetogether-page .heading h1 {
+.project-page .heading h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #000000;
   margin-bottom: 1rem;
+  color: #000;
 }
 
-.dreamteam-page .heading p, .scentinel-page .heading p, .vita-page .heading p, .tastetogether-page .heading p {
+.project-page .heading p {
   font-size: 1.25rem;
   color: #555;
   max-width: 600px;
 }
 
-/* Card */
-.dreamteam-page .card-bg, .scentinel-page .card-bg, .vita-page .card-bg, .tastetogether-page .card-bg {
-background: #fff;
-border-radius: 20px;
-box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-padding: 1.5rem 2rem;
-max-width: 1000px;
-height: 100px; 
-margin: -2rem auto 3rem auto;
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-overflow: hidden; 
-}
-
-.dreamteam-page .card-bg:hover, .scentinel-page .card-bg:hover, .vita-page .card-bg:hover, .tastetogether-page .card-bg:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-}
-
-.dreamteam-page .card-bg h2, .scentinel-page .card-bg h2, .vita-page .card-bg h2, .tastetogether-page .card-bg h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: #888888;
-}
-
-/* Problem Section */
-.dreamteam-page .problem, .scentinel-page .problem, .vita-page .problem, .tastetogether-page .problem {
-  max-width: 700px;
-  margin: 2.5rem auto;
-  padding: 0 2rem;
-  text-align: left;
-}
-
-.dreamteam-page .problem h2, .scentinel-page .problem h2, .vita-page .problem h2, .tastetogether-page .problem h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-/* ==========================
-   DreamTeam Page Animations
-   ========================== */
-
-/* Base animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Heading */
-.dreamteam-page .heading, .scentinel-page .heading, .vita-page .heading, .tastetogether-page .heading {
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 0.2s;
-  opacity: 0; /* ensure hidden before animation */
-}
-
-/* Card */
-.dreamteam-page .card-bg, .scentinel-page .card-bg, .vita-page .card-bg, .tastetogether-page .card-bg {
+.project-page .card-bg {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  max-width: 1000px;
+  margin: -2rem auto 3rem auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  height: auto;
   animation: fadeUp 0.9s ease-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
 }
 
-/* Problem Section */
-.dreamteam-page .problem, .scentinel-page .problem, .vita-page .problem, .tastetogether-page .problem {
+.project-page .card-bg:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+.project-page .card-bg h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+/* Sections (Problem, Research, Ideation, Solution) */
+.project-page section.problem,
+.project-page section.research,
+.project-page section.ideation,
+.project-page section.solution {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+  text-align: left;
   animation: fadeUp 1s ease-out forwards;
   animation-delay: 0.8s;
   opacity: 0;
+}
+
+.project-page section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
