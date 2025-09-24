@@ -568,3 +568,22 @@ section {
     will-change: transform;
   }
 }
+
+.project-image {
+  max-width: 1000px; /* Match card width */
+  margin: 2rem auto 4rem auto; /* Space above and below */
+  text-align: center;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 800px; /* Slightly smaller than container */
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+}
