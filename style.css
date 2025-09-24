@@ -350,7 +350,7 @@ section {
 .project-page .card-bg {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 10px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
   padding: 2rem 2.5rem;
@@ -358,12 +358,12 @@ section {
   margin: -3rem auto 4rem auto;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  height: auto;
-  max-height: 100px;
   animation: fadeUp 0.9s ease-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
   position: relative;
+  height: auto;
+  max-height: none; /* Remove the constraint temporarily */
 }
 
 .project-page .card-bg::before {
