@@ -252,7 +252,7 @@ border-radius: 20px;
 box-shadow: 0 8px 28px rgba(0,0,0,0.08);
 padding: 1.5rem 2rem;
 max-width: 1000px;
-height: 180px; 
+height: 100px; 
 margin: -2rem auto 3rem auto;
 transition: transform 0.2s ease, box-shadow 0.2s ease;
 overflow: hidden; 
@@ -266,7 +266,7 @@ overflow: hidden;
 .dreamteam-page .card-bg h2, .scentinel-page .card-bg h2, .vita-page .card-bg h2, .tastetogether-page .card-bg h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
-  color: #007aff;
+  color: #888888;
 }
 
 /* Problem Section */
