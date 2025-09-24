@@ -132,6 +132,7 @@ body {
   height: 250px; /* Fixed image height */
   object-fit: cover;
   display: block;
+  border-radius: 25px;
 }
 
 /* Ensure all headings inside work-card have the same font size and margin */
