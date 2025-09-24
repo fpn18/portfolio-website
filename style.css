@@ -224,7 +224,7 @@ body {
 .dreamteam-page .heading h1, .scentinel-page .heading h1, .vita-page .heading h1, .tastetogether-page .heading h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #111;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
@@ -232,17 +232,6 @@ body {
   font-size: 1.25rem;
   color: #555;
   max-width: 600px;
-}
-
-/* Accent bar under heading (Apple-style) */
-.dreamteam-page .heading::after, .scentinel-page .heading::after, .vita-page .heading::after, .tastetogether-page .heading::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #007aff;
-  margin: 1.5rem auto 0 auto;
-  border-radius: 2px;
 }
 
 /* Card */
