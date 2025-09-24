@@ -194,21 +194,20 @@ body {
    DreamTeam Page Enhancements
    ========================== */
 .dreamteam-page {
- background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 122, 255, 0.7) 100%); /* 70% opacity blue */
+ background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 128, 128, 0.7) 100%); /* 70% opacity blue */
 }
 
 .scentinel-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #F7D501 100%); /* soft gradient */
+background: linear-gradient(180deg, #fdfdfd 0%, #F7D501 100%); / soft gradient /
 }
 
 .vita-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #F89B5A 100%); /* soft gradient */
+background: linear-gradient(180deg, #fdfdfd 0%, #F89B5A 100%); / soft gradient /
 }
 
 .tastetogether-page {
-  background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 100%); /* soft gradient */
+background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 100%); / soft gradient */
 }
-
 
 /* Heading */
 .dreamteam-page .heading, .scentinel-page .heading, .vita-page .heading, .tastetogether-page .heading {
@@ -224,7 +223,7 @@ body {
 .dreamteam-page .heading h1, .scentinel-page .heading h1, .vita-page .heading h1, .tastetogether-page .heading h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -269,13 +268,7 @@ overflow: hidden;
 .dreamteam-page .problem h2, .scentinel-page .problem h2, .vita-page .problem h2, .tastetogether-page .problem h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #111;
-}
-
-/* Subtle divider */
-.dreamteam-page section + section, .scentinel-page section + section, .vita-page section + section, .tastetogether-page section + section {
-  border-top: 1px solid rgba(0,0,0,0.05);
-  padding-top: 2rem;
+  color: #ffffff;
 }
 
 /* ==========================
