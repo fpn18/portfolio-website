@@ -358,7 +358,8 @@ section {
   margin: -3rem auto 4rem auto;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  height: 100px;
+  height: auto;
+  max-height: 100px;
   animation: fadeUp 0.9s ease-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
