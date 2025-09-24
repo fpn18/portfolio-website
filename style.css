@@ -362,7 +362,7 @@ section {
   animation-delay: 0.5s;
   opacity: 0;
   position: relative;
-  height: auto;
+  height: 80px;
   max-height: none; /* Remove the constraint temporarily */
 }
 
