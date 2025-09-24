@@ -275,6 +275,7 @@ section {
   color: #999;
   background: linear-gradient(135deg, #fafafa, #f5f5f5);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 /* ==========================
