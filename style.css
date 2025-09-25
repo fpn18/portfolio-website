@@ -595,8 +595,8 @@ section {
 
 .carousel {
   position: relative;
-  width: 100%;
-  max-width: 900px;
+  width: 80%;
+  max-width: 700px;
   margin: 2rem auto;
   overflow: hidden; /* hides overflow */
   border-radius: 20px;
@@ -615,7 +615,7 @@ section {
 }
 
 .carousel-track img {
-  flex: 0 0 100%; /* full width per image */
+  flex: 0 0 80%; /* full width per image */
   object-fit: cover;
   border-radius: 20px;
 }
