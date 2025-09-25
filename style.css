@@ -278,6 +278,7 @@ section {
   color: #999;
   background: linear-gradient(135deg, #fafafa, #f5f5f5);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 /* ==========================
@@ -384,8 +385,8 @@ section {
 }
 
 .project-page .card-bg h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   color: #1a1a1a;
   font-weight: 600;
   letter-spacing: -0.01em;
