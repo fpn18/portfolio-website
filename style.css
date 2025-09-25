@@ -148,6 +148,7 @@ section {
   display: inline-block;
   animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
+  color: #FFD700;
 }
 
 @keyframes wave {
