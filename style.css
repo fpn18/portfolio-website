@@ -621,6 +621,7 @@ section {
   flex: 0 0 100%; /* full width per image */
   object-fit: contain;
   border-radius: 20px;
+  object-position: center;
   height: 100%
 }
 
