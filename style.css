@@ -597,7 +597,7 @@ section {
   position: relative;
   width: 90%;
   max-width: 800px;
-  height: 350px;          /* desktop height */
+  aspect-ratio: 16 / 9;
   margin: 2rem auto;
   overflow: hidden;
   border-radius: 20px;
@@ -606,6 +606,7 @@ section {
 
 .carousel-track {
   display: flex;
+  height: 100%;
   transition: transform 0.5s ease;
 }
 
