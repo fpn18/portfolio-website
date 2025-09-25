@@ -619,7 +619,7 @@ section {
 
 .carousel-track img {
   flex: 0 0 100%; /* full width per image */
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 20px;
   object-position: center;
   height: 100%
