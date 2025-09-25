@@ -598,8 +598,7 @@ section {
   width: 80%;
   max-width: 1000px;
   margin: 2rem auto;
-  height: auto;
-  max-height: 500px; /* limit max height */
+  height: 400px;
   margin: 2rem auto;
   overflow: hidden; /* hides overflow */
   border-radius: 20px;
@@ -623,7 +622,7 @@ section {
   object-fit: cover;
   border-radius: 20px;
   object-position: center;
-  height: 100%
+  height: 100%;
 }
 
 /* Arrows */
