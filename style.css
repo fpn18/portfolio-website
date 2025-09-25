@@ -366,7 +366,8 @@ section {
   animation-delay: 0.5s;
   opacity: 0;
   position: relative;
-  height: 80px;
+  min-height: 80px;
+  height: auto;
   max-height: none; /* Remove the constraint temporarily */
 }
 
