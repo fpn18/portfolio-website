@@ -65,3 +65,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Select elements
+const track = document.querySelector('.carousel-track');
+const prevButton = document.querySelector('.carousel-btn.prev');
+const nextButton = document.querySelector('.carousel-btn.next');
+const images = document.querySelectorAll('.carousel-track img');
+
+// Get the width of one image (including margin)
+const imageWidth = images[0].getBoundingClientRect().width + parseInt(getComputedStyle(images[0]).marginRight);
+
+// Move the track left/right
+let currentIndex = 0;
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+}
+
+// Next button
+nextButton.addEventListener('click', () => {
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+// Previous button
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
