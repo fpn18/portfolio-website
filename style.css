@@ -595,12 +595,11 @@ section {
 
 .carousel {
   position: relative;
-  width: 80%;
-  max-width: 1000px;
+  width: 90%;
+  max-width: 800px;
+  height: 350px;          /* desktop height */
   margin: 2rem auto;
-  height: 400px;
-  margin: 2rem auto;
-  overflow: hidden; /* hides overflow */
+  overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
@@ -608,21 +607,14 @@ section {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  margin-right: 1rem; /* space for scrollbar */;
-}
-.carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
 }
 
 .carousel-track img {
-  flex: 0 0 100%; /* full width per image */
-  object-fit: cover;
-  border-radius: 20px;
+  flex: 0 0 100%;         /* full width per image */
+  height: 100%;           /* match carousel container height */
+  object-fit: cover;      /* cover container fully */
   object-position: center;
-  height: 100%;
+  border-radius: 20px;
 }
 
 /* Arrows */
@@ -636,9 +628,10 @@ section {
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 50%;
-  transition: background 0.3s;
   z-index: 10;
+  transition: background 0.3s;
 }
+
 .carousel-btn:hover {
   background: rgba(255, 255, 255, 1);
 }
@@ -650,3 +643,11 @@ section {
 .carousel-btn.next {
   right: 10px;
 }
+
+/* Responsive height */
+@media (max-width: 768px) {
+  .carousel {
+    height: 250px;
+  }
+}
+

@@ -66,20 +66,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Select elements
 const track = document.querySelector('.carousel-track');
 const prevButton = document.querySelector('.carousel-btn.prev');
 const nextButton = document.querySelector('.carousel-btn.next');
 const images = document.querySelectorAll('.carousel-track img');
 
-// Get the width of one image (including margin)
-const imageWidth = images[0].getBoundingClientRect().width + parseInt(getComputedStyle(images[0]).marginRight);
-
-// Move the track left/right
 let currentIndex = 0;
 
+// Calculate image width dynamically (in case container resizes)
+function getImageWidth() {
+  return images[0].getBoundingClientRect().width;
+}
+
 function updateCarousel() {
-  track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+  const width = getImageWidth();
+  track.style.transform = `translateX(-${currentIndex * width}px)`;
 }
 
 // Next button
@@ -97,3 +98,6 @@ prevButton.addEventListener('click', () => {
     updateCarousel();
   }
 });
+
+// Optional: recalc on window resize
+window.addEventListener('resize', updateCarousel);
