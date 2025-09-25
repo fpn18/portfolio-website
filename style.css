@@ -596,7 +596,9 @@ section {
 .carousel {
   position: relative;
   width: 80%;
-  max-width: 700px;
+  max-width: 600px;
+  margin: 2rem auto;
+  height: 300px;
   margin: 2rem auto;
   overflow: hidden; /* hides overflow */
   border-radius: 20px;
@@ -609,15 +611,17 @@ section {
   scroll-behavior: smooth;
   overflow-x: auto;
   scrollbar-width: none; /* Firefox */
+  margin-right: 1rem; /* space for scrollbar */;
 }
 .carousel-track::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
 
 .carousel-track img {
-  flex: 0 0 80%; /* full width per image */
-  object-fit: cover;
+  flex: 0 0 100%; /* full width per image */
+  object-fit: contain;
   border-radius: 20px;
+  height: 100%
 }
 
 /* Arrows */
