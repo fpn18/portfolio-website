@@ -598,7 +598,8 @@ section {
   width: 80%;
   max-width: 1000px;
   margin: 2rem auto;
-  height: 800px;
+  height: auto;
+  max-height: 500px; /* limit max height */
   margin: 2rem auto;
   overflow: hidden; /* hides overflow */
   border-radius: 20px;
