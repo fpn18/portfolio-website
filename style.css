@@ -596,9 +596,9 @@ section {
 .carousel {
   position: relative;
   width: 80%;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 2rem auto;
-  height: 300px;
+  height: 800px;
   margin: 2rem auto;
   overflow: hidden; /* hides overflow */
   border-radius: 20px;
