@@ -143,12 +143,14 @@ section {
   line-height: 1.5;
 }
 
-/* Animated waving emoji */
-.wave-emoji {
+/* Fix: Exclude emoji from gradient */
+.hero h1 .wave-emoji {
+  -webkit-text-fill-color: initial; /* Reset emoji color */
+  color: initial; /* Make emoji visible */
+  background: none; /* Remove background gradient from emoji */
   display: inline-block;
   animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
-  color: #FFD700;
 }
 
 @keyframes wave {
