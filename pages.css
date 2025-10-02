@@ -1,0 +1,18 @@
+/* ==========================
+   Page-Specific Backgrounds
+   ========================== */
+.dreamteam-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 128, 128, 0.7) 100%);
+}
+
+.scentinel-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #F7D501 100%);
+}
+
+.vita-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #F89B5A 100%);
+}
+
+.tastetogether-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, #91AE92 100%);
+}
