@@ -435,7 +435,7 @@ section {
 .project-page section.problem,
 .project-page section.research,
 .project-page section.ideation,
-.project-page section.protyping,
+.project-page section.prototyping,
 .project-page section.solution {
   min-height: auto;
   padding: 0 2rem;
@@ -451,7 +451,7 @@ section {
 .project-page section.problem::before,
 .project-page section.research::before,
 .project-page section.ideation::before,
-.project-page section.protyping::before,
+.project-page section.prototyping::before,
 .project-page section.solution::before {
   content: '';
   position: absolute;
