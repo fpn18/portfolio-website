@@ -435,6 +435,7 @@ section {
 .project-page section.problem,
 .project-page section.research,
 .project-page section.ideation,
+.project-page section.protyping,
 .project-page section.solution {
   padding: 0 2rem;
   text-align: left;
@@ -449,6 +450,7 @@ section {
 .project-page section.problem::before,
 .project-page section.research::before,
 .project-page section.ideation::before,
+.project-page section.protyping::before,
 .project-page section.solution::before {
   content: '';
   position: absolute;
@@ -558,6 +560,7 @@ section {
   .project-page section.problem,
   .project-page section.research,
   .project-page section.ideation,
+  .project-page section.protyping,
   .project-page section.solution {
     padding: 0 1rem;
   }
