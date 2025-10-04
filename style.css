@@ -437,6 +437,7 @@ section {
 .project-page section.ideation,
 .project-page section.protyping,
 .project-page section.solution {
+  min-height: auto;
   padding: 0 2rem;
   text-align: left;
   animation: fadeUp 1s ease-out forwards;
