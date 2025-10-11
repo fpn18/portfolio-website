@@ -858,14 +858,26 @@ a img:hover {
 .brand-logos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 30px;
   align-items: center;
   justify-items: center;
+  padding: 20px 0;
 }
 
+@media (max-width: 1200px) {
+  .brand-logos { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .brand-logos { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .brand-logos { grid-template-columns: 1fr; }
+}
+
+
 .brand img {
-  max-width: 120px;
-  max-height: 60px;
+  max-width: 80px;
+  max-height: 40px;
   object-fit: contain;
   transition: transform 0.3s ease, opacity 0.3s ease;
   filter: grayscale(100%);
@@ -873,25 +885,26 @@ a img:hover {
 }
 
 .brand img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   filter: grayscale(0%);
   opacity: 1;
 }
 
-@media (max-width: 1200px) {
-  .brand-logos {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.content-creation-examples h2,
+.brands h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-@media (max-width: 900px) {
-  .brand-logos {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.content-creation-examples {
+  background-color: #fafafa;
 }
 
-@media (max-width: 600px) {
-  .brand-logos {
-    grid-template-columns: 1fr;
-  }
+.brands {
+  background-color: #fff;
+}
+
+.brands {
+  margin-bottom: 60px;
 }
