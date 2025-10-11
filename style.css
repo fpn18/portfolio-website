@@ -22,7 +22,7 @@ body {
 
 section {
   min-height: auto;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 /* ==========================
@@ -110,7 +110,6 @@ section {
   text-align: left;
   padding: 0;
   position: relative;
-  padding-bottom: 50px;
 }
 
 .hero::before {
@@ -141,14 +140,14 @@ section {
   color: #666;
   max-width: 600px;
   font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: -0.005em;
+  line-height: 1.5;
 }
 
+/* Fix: Exclude emoji from gradient */
 .hero h1 .wave-emoji {
-  -webkit-text-fill-color: initial;
-  color: initial;
-  background: none;
+  -webkit-text-fill-color: initial; /* Reset emoji color */
+  color: initial; /* Make emoji visible */
+  background: none; /* Remove background gradient from emoji */
   display: inline-block;
   animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
@@ -166,7 +165,7 @@ section {
    Work Section
    ========================== */
 .work {
-  padding: 6rem 0;
+  padding: 8rem 0;
   position: relative;
 }
 
@@ -184,7 +183,7 @@ section {
 .work h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #1a1a1a;
@@ -211,7 +210,51 @@ section {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+.work-card:hover::before {
+  opacity: 1;
+}
+
+.work-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-card:hover img {
+  transform: scale(1.05);
+}
+
+.work-card h3,
+.work-card h4,
+.work-card h5 {
+  margin: 1.5rem 1.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.work-card p {
+  margin: 0 1.5rem 2rem;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
 }
 
 .work-card:hover {
@@ -219,24 +262,597 @@ section {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
+.work-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ==========================
-   Brands Section
+   Footer
    ========================== */
+.footer {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 0.9rem;
+  color: #999;
+  background: linear-gradient(135deg, #fafafa, #f5f5f5);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+/* ==========================
+   Shared Project Page Styles
+   ========================== */
+.project-page .heading {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  position: relative;
+}
+
+.project-page .heading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.project-page .heading h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.project-page .heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a84ff, #5ac8fa);
+  margin: 2rem auto 0;
+  border-radius: 2px;
+  animation: slideIn 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+  transform: scaleX(0);
+}
+
+.project-page .card-bg p {
+  margin-bottom: 2rem; /* Add space between description and meta info */
+}
+
+.project-page .card-bg ul.meta {
+  margin-top: 0; /* Remove any top margin from the meta list */
+}
+
+@keyframes slideIn {
+  to { transform: scaleX(1); }
+}
+
+.project-page .heading p {
+  font-size: 1.8rem;
+  color: #666;
+  max-width: 700px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.project-page .card-bg {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 2rem 2.5rem;
+  max-width: 1000px;
+  margin: -3rem auto 4rem auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  animation: fadeUp 0.9s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  position: relative;
+  min-height: 80px;
+  height: auto;
+  max-height: none; /* Remove the constraint temporarily */
+}
+
+.project-page .card-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 60%);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.project-page .card-bg:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-page .card-bg h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Project Detail Box */
+.project-details-box {
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  max-width: 200px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item .label {
+  font-weight: 600;
+  color: #475569;
+  min-width: 80px;
+  margin-right: 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-item .value {
+  color: #1e293b;
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Sections (Problem, Research, Ideation, Solution) */
+.project-page section.problem,
+.project-page section.research,
+.project-page section.ideation,
+.project-page section.prototyping,
+.project-page section.solution {
+  min-height: auto;
+  padding: 0 2rem;
+  text-align: left;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  max-width: 1000px;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.project-page section.problem::before,
+.project-page section.research::before,
+.project-page section.ideation::before,
+.project-page section.prototyping::before,
+.project-page section.solution::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0a84ff, #5ac8fa);
+  border-radius: 2px;
+  margin-right: 2rem;
+}
+
+.project-page section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.project-page section p,
+.project-page section ul,
+.project-page section ol {
+  margin-left: 2rem;
+  color: #4a5568;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.project-page section ul,
+.project-page section ol {
+  padding-left: 1.5rem; /* Space for bullets/numbers */
+}
+
+.project-page section li {
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* ==========================
+   Page-Specific Backgrounds
+   ========================== */
+.dreamteam-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 123, 255, 0.03) 100%);
+}
+
+.scentinel-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, rgba(247, 213, 1, 0.05) 100%);
+}
+
+.vita-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, rgba(248, 155, 90, 0.05) 100%);
+}
+
+.tastetogether-page {
+  background: linear-gradient(180deg, #fdfdfd 0%, rgba(145, 174, 146, 0.05) 100%);
+}
+
+/* ==========================
+   Responsive Design
+   ========================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 4vw;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .work {
+    padding: 6rem 0;
+  }
+  
+  .work h2 {
+    font-size: 2rem;
+  }
+  
+  .project-page .card-bg {
+    padding: 1.5rem;
+    margin: -2rem 1rem 3rem;
+  }
+  
+  .project-page section.problem,
+  .project-page section.research,
+  .project-page section.ideation,
+  .project-page section.prototyping,
+  .project-page section.solution {
+    padding: 0 1rem;
+  }
+}
+
+/* ==========================
+   Micro-interactions
+   ========================== */
+@media (prefers-reduced-motion: no-preference) {
+  .work-card,
+  .project-page .card-bg,
+  .nav-links a {
+    will-change: transform;
+  }
+}
+
+.project-image {
+  max-width: 1000px; /* Match card width */
+  margin: 2rem auto 4rem auto; /* Space above and below */
+  text-align: center;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 1000px; /* Slightly smaller than container */
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+}
+
+.carousel {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  flex: 0 0 100%;         /* full width per image */
+  height: 100%;           /* match carousel container height */
+  object-fit: contain;      /* cover container fully */
+  object-position: center;
+  border-radius: 20px;
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Responsive height */
+@media (max-width: 768px) {
+  .carousel {
+    height: 250px;
+  }
+}
+
+/* Make the image responsive */
+a img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect */
+a img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.content-creation-examples {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #fafafa;
+}
+
+.content-creation-examples h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.content-creation-examples p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+/* Layout */
+.phone-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  justify-items: center;
+  padding: 40px 0;
+}
+
+@media (max-width: 1200px) {
+  .phone-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .phone-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .phone-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Realistic iPhone Frame --- */
+.phone {
+  position: relative;
+  width: 220px;
+  height: 440px;
+  border-radius: 40px;
+  padding: 8px;
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Metallic rim around the phone */
+.phone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  padding: 3px;
+  background: linear-gradient(135deg, #b5b5b5, #444, #222);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Screen Area */
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.phone-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  display: block;
+}
+
+/* Add subtle glass reflection */
+.phone-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Notch */
+.notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 20px;
+  background: #000;
+  border-radius: 10px;
+  z-index: 3;
+  box-shadow: inset 0 -1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Side Buttons */
+.side-buttons.left::before,
+.side-buttons.right::before {
+  content: '';
+  position: absolute;
+  background: #333;
+  border-radius: 2px;
+}
+
+.side-buttons.left::before {
+  left: -5px;
+  top: 100px;
+  width: 4px;
+  height: 40px;
+}
+
+.side-buttons.right::before {
+  right: -5px;
+  top: 160px;
+  width: 4px;
+  height: 60px;
+}
+
+/* Hover effect for realism */
+.phone:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .phone {
+    width: 200px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 800px) {
+  .phone {
+    width: 160px;
+    height: 320px;
+  }
+  .phone-gallery {
+    gap: 24px;
+  }
+}
+
 .brands {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #fff;
-  position: relative;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 0.3s;
 }
 
 .brands h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.brands p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #555;
 }
 
 .brand-logos {
@@ -248,22 +864,6 @@ section {
   padding: 20px 0;
 }
 
-.brand img {
-  max-width: 180px;
-  max-height: 120px;
-  object-fit: contain;
-  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-  filter: grayscale(100%);
-  opacity: 0.7;
-}
-
-.brand img:hover {
-  transform: scale(1.25);
-  filter: grayscale(0%);
-  opacity: 1;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
 @media (max-width: 1200px) {
   .brand-logos { grid-template-columns: repeat(3, 1fr); }
 }
@@ -272,28 +872,35 @@ section {
 }
 @media (max-width: 600px) {
   .brand-logos { grid-template-columns: 1fr; }
-  .brand img {
-    max-width: 140px;
-    max-height: 90px;
-  }
 }
 
-/* ==========================
-   Animations
-   ========================== */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.brand img {
+  max-width: 180px;
+  max-height: 120px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.7;
 }
 
-/* ==========================
-   Responsive Design
-   ========================== */
-@media (max-width: 768px) {
-  .navbar { padding: 1rem 4vw; }
-  .nav-links { gap: 1.5rem; }
-  .hero h1 { font-size: 2.5rem; }
-  .hero p { font-size: 1.1rem; }
-  .work { padding: 5rem 0; }
-  .work h2 { font-size: 2rem; }
+.brand img:hover {
+  transform: scale(1.25);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.content-creation-examples h2,
+.brands h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.content-creation-examples {
+  background-color: #fafafa;
+}
+
+.brands {
+  background-color: #fff;
 }
