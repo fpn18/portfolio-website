@@ -901,18 +901,31 @@ a img:hover {
   position: relative;
 }
 
-/* Optional subtle accent line below the title */
-.content-creation-examples h2::after,
-.brands h2::after {
+.content-creation-examples .h2::after {
   content: "";
   display: block;
-  width: 50px;                /* Length of accent line */
-  height: 2px;
-  background: linear-gradient(90deg, #0a84ff, #5ac8fa); /* soft gradient */
-  margin-top: 8px;
-  border-radius: 1px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a84ff, #5ac8fa);
+  margin: 2rem auto 0;
+  border-radius: 2px;
+  animation: slideIn 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+  transform: scaleX(0);
 }
 
+.brands .h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a84ff, #5ac8fa);
+  margin: 2rem auto 0;
+  border-radius: 2px;
+  animation: slideIn 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+  transform: scaleX(0);
+}
 
 .content-creation-examples {
   background-color: #fafafa;
