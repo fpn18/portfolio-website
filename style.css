@@ -894,8 +894,25 @@ a img:hover {
 .brands h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  font-weight: 700;
+  font-weight: 600;           /* Slightly lighter than 700 */
+  letter-spacing: 0.02em;     /* Adds elegance */
+  color: #111;                /* Dark, but softer than pure black */
+  line-height: 1.2;
+  position: relative;
 }
+
+/* Optional subtle accent line below the title */
+.content-creation-examples h2::after,
+.brands h2::after {
+  content: "";
+  display: block;
+  width: 50px;                /* Length of accent line */
+  height: 2px;
+  background: linear-gradient(90deg, #0a84ff, #5ac8fa); /* soft gradient */
+  margin-top: 8px;
+  border-radius: 1px;
+}
+
 
 .content-creation-examples {
   background-color: #fafafa;
