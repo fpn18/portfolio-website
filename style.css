@@ -21,8 +21,8 @@ body {
 }
 
 section {
-  min-height: 100vh;
-  padding: 80px 0;
+  min-height: auto;
+  padding: 60px 0;
 }
 
 /* ==========================
@@ -903,8 +903,4 @@ a img:hover {
 
 .brands {
   background-color: #fff;
-}
-
-.brands {
-  margin-bottom: 60px;
 }
