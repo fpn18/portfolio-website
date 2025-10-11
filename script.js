@@ -102,17 +102,18 @@ prevButton.addEventListener('click', () => {
 // Optional: recalc on window resize
 window.addEventListener('resize', updateCarousel);
 
-// Pause videos when scrolled out of view
 const videos = document.querySelectorAll(".phone-screen video");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
+    const video = entry.target;
     if (entry.isIntersecting) {
-      entry.target.play();
+      // Do nothing (user controls playback)
     } else {
-      entry.target.pause();
+      video.pause();
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.4 });
 
 videos.forEach(video => observer.observe(video));
+

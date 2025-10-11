@@ -676,7 +676,7 @@ a img:hover {
 .content-creation-examples {
   text-align: center;
   padding: 80px 20px;
-  background-color: #f9f9f9;
+  background-color: #fafafa;
 }
 
 .content-creation-examples h2 {
@@ -690,6 +690,7 @@ a img:hover {
   color: #555;
 }
 
+/* Layout */
 .phone-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -697,44 +698,90 @@ a img:hover {
   gap: 40px;
 }
 
+/* Phone Frame */
 .phone {
-  width: 250px;
-  height: 500px;
-  border: 12px solid #000;
-  border-radius: 36px;
-  padding: 8px;
-  background: #111;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
+  width: 240px;
+  height: 480px;
+  background: #111;
+  border-radius: 48px;
+  padding: 8px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .phone:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.4);
 }
 
-.phone::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 6px;
-  background: #333;
-  border-radius: 3px;
-}
-
+/* Screen Area */
 .phone-screen {
   width: 100%;
   height: 100%;
+  border-radius: 36px;
   overflow: hidden;
-  border-radius: 24px;
 }
 
 .phone-screen video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  border: none;
+}
+
+/* Notch */
+.notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 10px;
+  background: #000;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+/* Side Buttons */
+.side-buttons.left::before,
+.side-buttons.right::before {
+  content: '';
+  position: absolute;
+  background: #222;
+  border-radius: 2px;
+}
+
+.side-buttons.left::before {
+  left: -6px;
+  top: 100px;
+  width: 3px;
+  height: 40px;
+}
+
+.side-buttons.right::before {
+  right: -6px;
+  top: 160px;
+  width: 3px;
+  height: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .phone {
+    width: 200px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 800px) {
+  .phone {
+    width: 160px;
+    height: 320px;
+  }
+  .phone-gallery {
+    gap: 24px;
+  }
 }
