@@ -692,11 +692,31 @@ a img:hover {
 
 /* Layout */
 .phone-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
+  justify-items: center;
+  padding: 40px 0;
 }
+
+@media (max-width: 1200px) {
+  .phone-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .phone-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .phone-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Phone Frame */
 .phone {
