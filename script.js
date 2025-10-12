@@ -1,4 +1,6 @@
+// ==========================
 // Typing animation for hero section text
+// ==========================
 document.addEventListener('DOMContentLoaded', function() {
   const heroText = document.querySelector('.hero p');
   if (heroText) {
@@ -9,15 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
       if (i < fullText.length) {
         heroText.textContent += fullText.charAt(i);
         i++;
-        setTimeout(type, 35); // Adjust speed here
+        setTimeout(type, 35); // Adjust typing speed
       }
     }
     type();
   }
 
-  // Scroll-triggered animations (DreamTeam page)
+  // ==========================
+  // Scroll-triggered animations (for project sections)
+  // ==========================
   const animatedSections = document.querySelectorAll(
-    '.dreamteam-page .heading, .dreamteam-page .card-bg, .dreamteam-page .problem, scentinel-page .heading, .scentinel-page .card-bg, .scentinel-page .problem, vita-page .heading, .vita-page .card-bg, .vita-page .problem, tastetogether-page .heading, .tastetogether-page .card-bg, .tastetogether-page .problem'
+    '.dreamteam-page .heading, .dreamteam-page .card-bg, .dreamteam-page .problem, .dreamteam-page .research, .dreamteam-page .userpersonas, .dreamteam-page .solution, .dreamteam-page .experiences-phases'
   );
 
   const observer = new IntersectionObserver(
@@ -27,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
           entry.target.style.opacity = 1;
           entry.target.style.transform = 'translateY(0)';
           entry.target.style.transition = 'all 0.8s ease-out';
-          observer.unobserve(entry.target); // run once
+          observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.2 } // triggers when 20% visible
+    { threshold: 0.2 }
   );
 
   animatedSections.forEach(section => {
@@ -41,79 +45,86 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Prevent multiple clicks on the same nav link
+// ==========================
+// Prevent multiple clicks on same nav link
+// ==========================
 document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            
-            // If clicking on a link to the current page, prevent default behavior
-            if (href.includes(currentPage) || (href.startsWith('#') && currentPage === 'index.html')) {
-                e.preventDefault();
-                
-                // Smooth scroll to section if it's an anchor link
-                if (href.startsWith('#')) {
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            }
-        });
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+      // Prevent reload if already on this page
+      if (href.includes(currentPage) || (href.startsWith('#') && currentPage === 'index.html')) {
+        e.preventDefault();
+
+        // Smooth scroll for anchor links
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }
     });
-});
-
-const track = document.querySelector('.carousel-track');
-const prevButton = document.querySelector('.carousel-btn.prev');
-const nextButton = document.querySelector('.carousel-btn.next');
-const images = document.querySelectorAll('.carousel-track img');
-
-let currentIndex = 0;
-
-// Calculate image width dynamically (in case container resizes)
-function getImageWidth() {
-  return images[0].getBoundingClientRect().width;
-}
-
-function updateCarousel() {
-  const width = getImageWidth();
-  track.style.transform = `translateX(-${currentIndex * width}px)`;
-}
-
-// Next button
-nextButton.addEventListener('click', () => {
-  if (currentIndex < images.length - 1) {
-    currentIndex++;
-    updateCarousel();
-  }
-});
-
-// Previous button
-prevButton.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateCarousel();
-  }
-});
-
-// Optional: recalc on window resize
-window.addEventListener('resize', updateCarousel);
-
-const videos = document.querySelectorAll(".phone-screen video");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const video = entry.target;
-    if (entry.isIntersecting) {
-      // Do nothing (user controls playback)
-    } else {
-      video.pause();
-    }
   });
-}, { threshold: 0.4 });
+});
 
-videos.forEach(video => observer.observe(video));
+// ==========================
+// Carousel (Reusable for all sections)
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+  const carousels = document.querySelectorAll(".carousel");
 
+  carousels.forEach(carousel => {
+    const track = carousel.querySelector(".carousel-track");
+    const slides = Array.from(track.children);
+    const prevBtn = carousel.querySelector(".carousel-btn.prev");
+    const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+    let currentIndex = 0;
+
+    const updateCarousel = () => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    };
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length; // loop forward
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length; // loop backward
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+
+    // Optional: Auto-slide every 5 seconds
+    // setInterval(() => nextBtn.click(), 5000);
+  });
+});
+
+// ==========================
+// Video autoplay control (pause when off-screen)
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll(".phone-screen video");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        // Autoplay only if you want automatic start
+        // video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  videos.forEach(video => observer.observe(video));
+});
