@@ -433,6 +433,7 @@ section {
 
 /* Sections (Problem, Research, Ideation, Solution) */
 .project-page section.problem,
+.project-page section.userpersonas,
 .project-page section.research,
 .project-page section.ideation,
 .project-page section.prototyping,
@@ -446,22 +447,6 @@ section {
   max-width: 1000px;
   margin: 3rem auto;
   position: relative;
-}
-
-.project-page section.problem::before,
-.project-page section.research::before,
-.project-page section.ideation::before,
-.project-page section.prototyping::before,
-.project-page section.solution::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #0a84ff, #5ac8fa);
-  border-radius: 2px;
-  margin-right: 2rem;
 }
 
 .project-page section h2 {
@@ -559,6 +544,7 @@ section {
   }
   
   .project-page section.problem,
+  .project-page section.userpersonas,
   .project-page section.research,
   .project-page section.ideation,
   .project-page section.prototyping,
