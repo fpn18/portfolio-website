@@ -111,13 +111,57 @@ document.addEventListener("DOMContentLoaded", () => {
   videos.forEach(video => observer.observe(video));
 });
 
-<script>
+
+document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.nav-links a');
 
+  function setActiveLink() {
+    const currentPage =
+      window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+
+      // Match links to the current HTML page
+      if (
+        href &&
+        !href.startsWith('#') &&
+        href.split('#')[0] === currentPage
+      ) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Highlight the correct link when the page loads
+  setActiveLink();
+
   navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      navLinks.forEach(item => item.classList.remove('active'));
-      this.classList.add('active');
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      const currentPage =
+        window.location.pathname.split('/').pop() || 'index.html';
+
+      // Avoid reloading the current page
+      if (href === currentPage || href === window.location.pathname) {
+        e.preventDefault();
+      }
+
+      // Handle same-page anchor links
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        navLinks.forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+      }
     });
   });
-</script>
+});
