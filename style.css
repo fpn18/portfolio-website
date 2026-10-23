@@ -970,3 +970,83 @@ a img:hover {
 .navbar .nav-links a.active::before {
   opacity: 1;
 }
+
+/* CV Section */
+.cv-section {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+.cv-section h2 {
+  font-family: 'Crafty Girls', cursive;
+  color: #d17c9a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cv-section p {
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.cv-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cv-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: 1.5px solid #d17c9a;
+  border-radius: 8px;
+  background: #d17c9a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.cv-btn:hover {
+  background: transparent;
+  color: #d17c9a;
+  transform: translateY(-2px);
+}
+
+.cv-btn-secondary {
+  background: transparent;
+  color: #d17c9a;
+}
+
+.cv-btn-secondary:hover {
+  background: #d17c9a;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .cv-section {
+    padding: 2rem 1rem;
+  }
+
+  .cv-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cv-btn {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+}
