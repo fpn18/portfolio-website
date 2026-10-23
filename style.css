@@ -119,6 +119,11 @@ section {
 }
 
 
+/* Prevent the fixed navbar from covering the page heading */
+.project-page .content-wrapper {
+  padding-top: 100px;
+}
+
 
 /* ==========================
    Content Wrapper
