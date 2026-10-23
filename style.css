@@ -20,15 +20,23 @@ body {
   letter-spacing: -0.01em;
 }
 
+```css
 .hero h1 {
   font-family: 'Crafty Girls', cursive;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
   color: #d17c9a;
-  font-size: 3.5rem;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: #d17c9a;
+  letter-spacing: normal;
   line-height: 1.4;
   padding: 0.1em 0.15em 0.25em;
-  margin-bottom: 0.3em;
+  margin-bottom: 1.5rem;
   overflow: visible;
 }
+```
 
 
 
@@ -170,18 +178,6 @@ section {
   bottom: 0;
   background: radial-gradient(ellipse at top left, rgba(0, 123, 255, 0.02), transparent 50%);
   pointer-events: none;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #1a1a1a 0%, #666 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.1;
 }
 
 .hero p {
