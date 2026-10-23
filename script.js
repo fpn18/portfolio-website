@@ -112,63 +112,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+/* ==========================
+   Persistent Navbar Styling
+   ========================== */
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  function updateActiveLink() {
-    const currentPage =
-      window.location.pathname.split('/').pop() || 'index.html';
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-
-      if (!href) return;
-
-      const linkPage = href.split('#')[0];
-
-      // Highlight the link for the current page
-      if (linkPage && linkPage === currentPage) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
-
-  // Set the active link whenever the page loads
-  updateActiveLink();
+  // Get the current page, ignoring any #section at the end
+  const currentPage =
+    window.location.pathname.split('/').pop() || 'index.html';
 
   navLinks.forEach(link => {
-    link.addEventListener('click', function (event) {
-      const href = this.getAttribute('href');
-      if (!href) return;
+    const href = link.getAttribute('href');
 
-      const currentPage =
-        window.location.pathname.split('/').pop() || 'index.html';
+    if (!href) return;
 
-      const linkPage = href.split('#')[0];
+    // Extract the HTML filename from the link
+    const linkPage = href.split('#')[0] || 'index.html';
 
-      // Same-page section links
-      if (href.startsWith('#')) {
-        event.preventDefault();
-
-        const target = document.querySelector(href);
-
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        navLinks.forEach(item => item.classList.remove('active'));
-        this.classList.add('active');
-      }
-
-      // Prevent reloading the page you are already on
-      else if (linkPage === currentPage) {
-        event.preventDefault();
-        navLinks.forEach(item => item.classList.remove('active'));
-        this.classList.add('active');
-      }
-    });
+    // Highlight the link for the page currently being viewed
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   });
 });
