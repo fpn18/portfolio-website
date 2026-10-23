@@ -119,7 +119,8 @@ section {
 }
 
 
-/* Remove navbar hover shadows and highlights */
+
+/* Remove navbar drop shadows only */
 .nav-links a,
 .nav-links a:hover {
   box-shadow: none !important;
