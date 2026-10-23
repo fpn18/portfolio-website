@@ -958,3 +958,15 @@ a img:hover {
 .logo a {
   display: inline-block;
 }
+
+
+/* Persistent navbar active state */
+.navbar .nav-links a.active {
+  font-family: 'Crafty Girls', cursive !important;
+  color: #d17c9a !important;
+  transform: translateY(-1px);
+}
+
+.navbar .nav-links a.active::before {
+  opacity: 1;
+}
