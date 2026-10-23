@@ -905,3 +905,14 @@ a img:hover {
 .brands {
   background-color: #fff;
 }
+
+
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.logo a {
+  display: inline-block;
+}
