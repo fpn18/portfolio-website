@@ -909,8 +909,8 @@ a img:hover {
 
 
 .logo-img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: block;
   object-fit: contain;
 }
