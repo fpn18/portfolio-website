@@ -119,6 +119,14 @@ section {
 }
 
 
+/* Remove navbar hover shadows and highlights */
+.nav-links a,
+.nav-links a:hover {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+
 /* ==========================
    Content Wrapper
    ========================== */
