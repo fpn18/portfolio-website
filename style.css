@@ -1050,3 +1050,27 @@ a img:hover {
     text-align: center;
   }
 }
+
+
+/* UX/UI and Mock Campaign section headings */
+.work .work-section-title {
+  font-family: 'Crafty Girls', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #d17c9a;
+  text-align: center;
+  letter-spacing: normal;
+  line-height: 1.4;
+  margin: 0 0 3rem;
+}
+
+/* Space between the two project categories */
+.work .campaign-title {
+  margin-top: 6rem;
+}
+
+/* Prevent the headings from being hidden behind the fixed navbar */
+#work {
+  scroll-margin-top: 110px;
+}
+
