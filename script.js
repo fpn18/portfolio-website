@@ -112,22 +112,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  function setActiveLink() {
+  function updateActiveLink() {
     const currentPage =
       window.location.pathname.split('/').pop() || 'index.html';
 
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
 
-      // Match links to the current HTML page
-      if (
-        href &&
-        !href.startsWith('#') &&
-        href.split('#')[0] === currentPage
-      ) {
+      if (!href) return;
+
+      const linkPage = href.split('#')[0];
+
+      // Highlight the link for the current page
+      if (linkPage && linkPage === currentPage) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
@@ -135,23 +136,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Highlight the correct link when the page loads
-  setActiveLink();
+  // Set the active link whenever the page loads
+  updateActiveLink();
 
   navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', function (event) {
       const href = this.getAttribute('href');
+      if (!href) return;
+
       const currentPage =
         window.location.pathname.split('/').pop() || 'index.html';
 
-      // Avoid reloading the current page
-      if (href === currentPage || href === window.location.pathname) {
-        e.preventDefault();
-      }
+      const linkPage = href.split('#')[0];
 
-      // Handle same-page anchor links
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
+      // Same-page section links
+      if (href.startsWith('#')) {
+        event.preventDefault();
 
         const target = document.querySelector(href);
 
@@ -159,6 +159,13 @@ document.addEventListener('DOMContentLoaded', function () {
           target.scrollIntoView({ behavior: 'smooth' });
         }
 
+        navLinks.forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+      }
+
+      // Prevent reloading the page you are already on
+      else if (linkPage === currentPage) {
+        event.preventDefault();
         navLinks.forEach(item => item.classList.remove('active'));
         this.classList.add('active');
       }
