@@ -27,32 +27,93 @@
   });
 });
 
-// ==========================
-// Prevent multiple clicks on same nav link
-// ==========================
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
+  // ==========================
+  // Scroll-triggered animations
+  // ==========================
+  const animatedSections = document.querySelectorAll(
+    '.dreamteam-page .heading, .dreamteam-page .card-bg, .dreamteam-page .problem, .dreamteam-page .research, .dreamteam-page .userpersonas, .dreamteam-page .solution, .dreamteam-page .experiences-phases'
+  );
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.transition = 'all 0.8s ease-out';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedSections.forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(30px)';
+      observer.observe(section);
+    });
+  }
+
+  // ==========================
+  // Persistent Navbar Styling
+  // ==========================
   const navLinks = document.querySelectorAll('.nav-links a');
 
+  function updateActiveLink() {
+    const currentURL = new URL(window.location.href);
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      const linkURL = new URL(href, window.location.href);
+
+      // Match the actual destination page
+      const samePage = linkURL.pathname === currentURL.pathname;
+
+      // For links to sections, match the section too
+      const sameSection =
+        linkURL.hash && linkURL.hash === currentURL.hash;
+
+      const isActive = samePage &&
+        (linkURL.hash ? sameSection : !currentURL.hash);
+
+      link.classList.toggle('active', isActive);
+    });
+  }
+
+  updateActiveLink();
+
+  // Keep section links active after clicking them
   navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (event) {
       const href = this.getAttribute('href');
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      if (!href) return;
 
-      // Prevent reload if already on this page
-      if (href.includes(currentPage) || (href.startsWith('#') && currentPage === 'index.html')) {
-        e.preventDefault();
+      const linkURL = new URL(href, window.location.href);
+      const currentURL = new URL(window.location.href);
 
-        // Smooth scroll for anchor links
-        if (href.startsWith('#')) {
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
+      if (
+        linkURL.pathname === currentURL.pathname &&
+        linkURL.hash
+      ) {
+        const target = document.querySelector(linkURL.hash);
+
+        if (target) {
+          event.preventDefault();
+          history.pushState(null, '', linkURL.hash);
+          target.scrollIntoView({ behavior: 'smooth' });
+          updateActiveLink();
         }
       }
     });
   });
+
+  window.addEventListener('popstate', updateActiveLink);
+  window.addEventListener('hashchange', updateActiveLink);
 });
+
 
 // ==========================
 // Carousel (Reusable for all sections)
@@ -112,29 +173,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ==========================
-   Persistent Navbar Styling
-   ========================== */
-document.addEventListener('DOMContentLoaded', function () {
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  // Get the current page, ignoring any #section at the end
-  const currentPage =
-    window.location.pathname.split('/').pop() || 'index.html';
-
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-
-    if (!href) return;
-
-    // Extract the HTML filename from the link
-    const linkPage = href.split('#')[0] || 'index.html';
-
-    // Highlight the link for the page currently being viewed
-    if (linkPage === currentPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-});
