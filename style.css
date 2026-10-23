@@ -47,18 +47,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Navbar link hover effect */
-.nav-links a {
-  font-family: 'Inter', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  font-family: 'Crafty Girls', cursive;
-  color: #d17c9a;
-  transform: translateY(-2px);
-}
 
 
 section {
@@ -109,10 +97,12 @@ section {
   position: relative;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease,
+              font-family 0.3s ease;
 }
 
-/* Background highlight on hover */
+/* Pink background highlight */
 .nav-links a::before {
   content: '';
   position: absolute;
@@ -128,17 +118,19 @@ section {
   z-index: -1;
 }
 
-.nav-links a:hover::before {
-  opacity: 1;
-}
-
-/* Crafty Girls hover effect */
-.nav-links a:hover {
+/* Keep the hover styling on the hovered OR active link */
+.nav-links a:hover,
+.nav-links a.active {
   font-family: 'Crafty Girls', cursive;
   color: #d17c9a;
   transform: translateY(-1px);
 }
 
+/* Keep the background highlight visible */
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  opacity: 1;
+}
 
 /* Prevent the fixed navbar from covering the page heading */
 .project-page .content-wrapper {
