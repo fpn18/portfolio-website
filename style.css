@@ -20,17 +20,13 @@ body {
   letter-spacing: -0.01em;
 }
 
-
 .hero h1 {
   font-family: 'Crafty Girls', cursive;
+  color: #d17c9a;
   font-size: 3.5rem;
   line-height: 1.4;
   padding: 0.1em 0.15em 0.25em;
   margin-bottom: 0.3em;
-  overflow: visible;
-}
-
-.hero {
   overflow: visible;
 }
 
