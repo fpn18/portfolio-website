@@ -907,11 +907,14 @@ a img:hover {
 }
 
 
-.logo img {
+
+.logo-img {
   width: 120px;
   height: auto;
   display: block;
+  object-fit: contain;
 }
+
 
 .logo a {
   display: inline-block;
