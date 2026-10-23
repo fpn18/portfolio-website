@@ -24,11 +24,14 @@ body {
 .hero h1 {
   font-family: 'Crafty Girls', cursive;
   font-size: 3.5rem;
-  display: inline-block;
-  max-width: 100%;
+  line-height: 1.4;
+  padding: 0.1em 0.15em 0.25em;
+  margin-bottom: 0.3em;
   overflow: visible;
-  padding-right: 0.15em;
-  box-sizing: content-box;
+}
+
+.hero {
+  overflow: visible;
 }
 
 
