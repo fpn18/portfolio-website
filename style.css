@@ -1074,3 +1074,130 @@ a img:hover {
   scroll-margin-top: 110px;
 }
 
+/* Introduction and pinboard layout */
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+}
+
+.pinboard {
+  position: relative;
+  min-height: 440px;
+  overflow: visible;
+}
+
+/* Polaroid photos */
+.polaroid {
+  position: absolute;
+  width: 175px;
+  padding: 10px 10px 16px;
+  background: #fffdfb;
+  box-shadow: 2px 5px 15px rgba(70, 40, 50, 0.18);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transition: box-shadow 0.2s;
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.polaroid p {
+  margin: 12px 0 0;
+  color: #8d6175;
+  font-family: 'Crafty Girls', cursive;
+  font-size: 15px;
+  text-align: center;
+}
+
+.polaroid:active {
+  cursor: grabbing;
+}
+
+.polaroid.dragging {
+  box-shadow: 5px 12px 25px rgba(70, 40, 50, 0.25);
+}
+
+/* Individual photo positions */
+.photo-one {
+  top: 25px;
+  left: 8%;
+  transform: rotate(-9deg);
+}
+
+.photo-two {
+  top: 95px;
+  right: 5%;
+  transform: rotate(8deg);
+}
+
+.photo-three {
+  bottom: 5px;
+  left: 25%;
+  transform: rotate(-4deg);
+}
+
+/* Decorative stickers */
+.sticker {
+  position: absolute;
+  z-index: 10;
+  color: #d17c9a;
+  font-size: 42px;
+  pointer-events: none;
+}
+
+.sticker-one {
+  top: 5px;
+  right: 12%;
+  transform: rotate(15deg);
+}
+
+.sticker-two {
+  bottom: 45px;
+  right: 4%;
+  color: #e9b6c9;
+  transform: rotate(-12deg);
+}
+
+.sticker-three {
+  top: 48%;
+  left: 2%;
+  color: #d9a6ba;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pinboard {
+    min-height: 390px;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .polaroid {
+    width: 145px;
+  }
+
+  .polaroid img {
+    height: 125px;
+  }
+}

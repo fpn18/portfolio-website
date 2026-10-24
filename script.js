@@ -172,4 +172,45 @@ document.addEventListener("DOMContentLoaded", () => {
   videos.forEach(video => observer.observe(video));
 });
 
+document.querySelectorAll('.polaroid').forEach((photo) => {
+  let startX = 0;
+  let startY = 0;
+  let offsetX = 0;
+  let offsetY = 0;
 
+  photo.addEventListener('pointerdown', (event) => {
+    event.preventDefault();
+
+    const rect = photo.getBoundingClientRect();
+
+    startX = event.clientX;
+    startY = event.clientY;
+    offsetX = 0;
+    offsetY = 0;
+
+    photo.classList.add('dragging');
+    photo.style.zIndex = Date.now();
+    photo.setPointerCapture(event.pointerId);
+  });
+
+  photo.addEventListener('pointermove', (event) => {
+    if (!photo.classList.contains('dragging')) return;
+
+    offsetX = event.clientX - startX;
+    offsetY = event.clientY - startY;
+
+    photo.style.left = `calc(${getComputedStyle(photo).left} + ${offsetX}px)`;
+    photo.style.top = `calc(${getComputedStyle(photo).top} + ${offsetY}px)`;
+
+    startX = event.clientX;
+    startY = event.clientY;
+  });
+
+  photo.addEventListener('pointerup', () => {
+    photo.classList.remove('dragging');
+  });
+
+  photo.addEventListener('pointercancel', () => {
+    photo.classList.remove('dragging');
+  });
+});
