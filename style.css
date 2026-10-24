@@ -1065,6 +1065,10 @@ section {
   color: #fff;
 }
 
+.cv-section {
+  margin-top: -40px;
+}
+
 /* 17. RESPONSIVE TABLET
 ----------------------------------------- */
 
