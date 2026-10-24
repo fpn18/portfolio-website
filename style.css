@@ -415,3 +415,277 @@ section {
     min-height: 350px;
   }
 }
+
+
+/* ==========================
+   FIXED NAVBAR & LOGO
+========================== */
+
+.navbar {
+  padding: 0.75rem 6vw;
+  min-height: 0;
+}
+
+.logo-img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+}
+
+
+/* ==========================
+   HOMEPAGE INTRO
+========================== */
+
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* Clear the fixed navbar */
+  padding: 145px 6vw 60px;
+  min-height: 100vh;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-text h1 {
+  font-family: 'Crafty Girls', cursive;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  color: #d17c9a;
+  background: none;
+  -webkit-text-fill-color: #d17c9a;
+  letter-spacing: normal;
+  line-height: 1.4;
+  padding: 0.1em 0.15em 0.25em;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+}
+
+.intro-text p {
+  max-width: 550px;
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+
+/* ==========================
+   POLAROID PINBOARD
+   Preserve existing positions
+========================== */
+
+.pinboard {
+  position: relative;
+  min-height: 440px;
+  overflow: visible;
+}
+
+.polaroid {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.polaroid img {
+  pointer-events: none;
+}
+
+
+/* ==========================
+   WORK SECTION
+   Preserve original card styles
+========================== */
+
+#work {
+  scroll-margin-top: 110px;
+  padding: 6rem 6vw;
+}
+
+.work .work-section-title {
+  font-family: 'Crafty Girls', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #d17c9a;
+  text-align: center;
+  letter-spacing: normal;
+  line-height: 1.4;
+  margin: 0 0 3rem;
+}
+
+.work .campaign-title {
+  margin-top: 6rem;
+}
+
+/* Keep the original work-card hover effects */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+  width: 100%;
+}
+
+.work-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-card {
+  height: 100%;
+}
+
+
+/* ==========================
+   RESPONSIVE TABLET & MOBILE
+========================== */
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.6rem 4vw;
+  }
+
+  .logo-img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 110px 6vw 40px;
+    min-height: auto;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    margin-bottom: 1rem;
+  }
+
+  .intro-text p {
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+
+  .pinboard {
+    min-height: 390px;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .polaroid {
+    width: 145px;
+  }
+
+  .polaroid img {
+    height: 125px;
+  }
+
+  .photo-one {
+    top: 25px;
+    left: 5%;
+  }
+
+  .photo-two {
+    top: 65px;
+    right: 3%;
+  }
+
+  .photo-three {
+    bottom: 20px;
+    left: 24%;
+  }
+
+  .sticker {
+    font-size: 32px;
+  }
+
+  #work {
+    padding: 4rem 5vw;
+  }
+
+  .work .work-section-title {
+    margin-bottom: 2rem;
+  }
+
+  .work .campaign-title {
+    margin-top: 4rem;
+  }
+
+  .work-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0.5rem 3vw;
+  }
+
+  .logo-img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-links {
+    gap: 0.35rem;
+  }
+
+  .nav-links a {
+    padding: 0.35rem;
+    font-size: 0.75rem;
+  }
+
+  .intro-layout {
+    padding-top: 95px;
+  }
+
+  .pinboard {
+    min-height: 350px;
+  }
+
+  .polaroid {
+    width: 130px;
+  }
+
+  .polaroid img {
+    height: 112px;
+  }
+
+  #work {
+    padding-right: 4vw;
+    padding-left: 4vw;
+  }
+
+  .work-card img {
+    height: 200px;
+  }
+}
