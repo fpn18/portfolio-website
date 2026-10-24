@@ -1,176 +1,21 @@
-style.css: /* ==========================
-   Reset & Base
-   ========================== */
-html {
-  scroll-behavior: smooth;
-}
-index.html: <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Felicia Portfolio</title>
+/* =========================================
+   FELICIA PORTFOLIO — CLEAN STYLESHEET
+   ========================================= */
 
-  <!-- Inter Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+/* 1. RESET & BASE
+----------------------------------------- */
 
-
-  <!-- Crafty Girls Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-
-
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="images/felicialogo.png" alt="Felicia Logo" class="logo-img">
-  </div>
-
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-
-
-
-  <div class="intro-layout">
-
-  <div class="intro-text">
-    <h1>Hi, I'm Felicia!</h1>
-    <p>
-      I'm a Design Engineering student passionate about
-      UX/UI, creativity and thoughtful design.
-    </p>
-  </div>
-
-  <div class="pinboard">
-
-    <div class="polaroid photo-one">
-      <img src="images/photo1.jpeg" alt="A favourite memory">
-      <p>little moments ♡</p>
-    </div>
-
-    <div class="polaroid photo-two">
-      <img src="images/photo2.jpg" alt="A creative project">
-      <p>creative days</p>
-    </div>
-
-    <div class="polaroid photo-three">
-      <img src="images/photo3.jpg" alt="A favourite place">
-      <p>somewhere lovely</p>
-    </div>
-
-    <div class="sticker sticker-one">♡</div>
-    <div class="sticker sticker-two">✿</div>
-    <div class="sticker sticker-three">✧</div>
-
-  </div>
-</div>
-  
-  
-<!-- Work Section -->
-<section id="work" class="work">
-
-  <!-- UX/UI Projects -->
-  <h1 class="work-section-title">UX/UI Projects</h1>
-
-  <div class="work-grid">
-    <a href="dreamteam.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/project1.jpeg" alt="DreamTeam">
-        <h3>DreamTeam</h3>
-        <p>My Imperial Campus App</p>
-      </div>
-    </a>
-
-    <a href="i&e.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/I&E.png" alt="Axi">
-        <h3>Axi</h3>
-        <p>Innovation and Entrepreneurship Project</p>
-      </div>
-    </a>
-
-    <a href="gather.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/gather-poster.png" alt="Gather">
-        <h3>Gather</h3>
-        <p>User Interfaces and Interactions Project</p>
-      </div>
-    </a>
-
-    <a href="scentinel.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/project2.png" alt="Scentinel">
-        <h3>Scentinel</h3>
-        <p>Imperial College DESIRE Award Winner</p>
-      </div>
-    </a>
-
-    <a href="vita.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/vitamockup.png" alt="Vita">
-        <h3>Vita</h3>
-        <p>Amazon University Engagement Program Project</p>
-      </div>
-    </a>
-
-    <a href="tastetogether.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/project4.png" alt="Taste Together">
-        <h3>Taste Together</h3>
-        <p>Human-Centred Design Engineering Project</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Mock Campaign Projects -->
-  <h1 class="work-section-title campaign-title">Mock Campaign Projects</h1>
-
-  <div class="work-grid">
-    <a href="elfxkatseye.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/katseyecover.png" alt="Love Yourself Loud: e.l.f. x Katseye">
-        <h3>Love Yourself Loud: e.l.f. x Katseye</h3>
-        <p>Mock Campaign Proposal</p>
-      </div>
-    </a>
-
-    <a href="disney.html" class="work-card-link">
-      <div class="work-card">
-        <img src="images/Disney - Cover.png" alt="Where the magic comes together">
-        <h3>Where the Magic Comes Together - Disney</h3>
-        <p>Mock Campaign Proposal</p>
-      </div>
-    </a>
-  </div>
-
-</section>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2026 Felicia </p>
-    </footer>
-  </div>
-
-  <!-- JS -->
-  <script src="script.js"></script>
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -180,18 +25,171 @@ body {
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.01em;
+  overflow-x: hidden;
 }
 
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  min-height: auto;
+}
+
+/* 2. NAVBAR
+----------------------------------------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 68px;
+  padding: 6px clamp(12px, 4vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  flex: 0 0 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar .logo-img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 1 auto;
+  gap: clamp(2px, 1.2vw, 16px);
+  min-width: 0;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar .nav-links li {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 8px clamp(5px, 0.8vw, 12px);
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(12px, 1.15vw, 15px);
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.navbar .nav-links a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 8px;
+  background: rgba(209, 124, 154, 0.1);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+  color: #d17c9a;
+  font-family: 'Crafty Girls', cursive;
+  transform: translateY(-1px);
+}
+
+.navbar .nav-links a:hover::before,
+.navbar .nav-links a.active::before {
+  opacity: 1;
+}
+
+/* 3. GENERAL CONTENT WRAPPER
+----------------------------------------- */
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 6vw;
+  padding-left: 6vw;
+}
+
+.project-page .content-wrapper {
+  padding-top: 100px;
+}
+
+/* 4. GENERAL HERO STYLES
+----------------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 120px 6vw 60px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(209, 124, 154, 0.04),
+    transparent 55%
+  );
+  pointer-events: none;
+}
 
 .hero h1 {
+  position: relative;
   font-family: 'Crafty Girls', cursive;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 400;
   color: #d17c9a;
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
   -webkit-text-fill-color: #d17c9a;
+  background: none;
   letter-spacing: normal;
   line-height: 1.4;
   padding: 0.1em 0.15em 0.25em;
@@ -199,157 +197,19 @@ body {
   overflow: visible;
 }
 
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap');
-
-/* Reset & Base */
-html {
-  scroll-behavior: smooth;
-}
-
-
-
-section {
-  min-height: auto;
-  padding: 60px 0;
-}
-
-/* ==========================
-   Navbar
-   ========================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1.5rem 6vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 100;
-  transition: all 0.3s ease;
-}
-
-.logo a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2.5rem;
-}
-
-
-/* Navbar links */
-.nav-links a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  position: relative;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  display: inline-block;
-  transition: color 0.3s ease, transform 0.3s ease,
-              font-family 0.3s ease;
-}
-
-/* Pink background highlight */
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(209, 124, 154, 0.12),
-    rgba(209, 124, 154, 0.05)
-  );
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-/* Keep the hover styling on the hovered OR active link */
-.nav-links a:hover,
-.nav-links a.active {
-  font-family: 'Crafty Girls', cursive;
-  color: #d17c9a;
-  transform: translateY(-1px);
-}
-
-/* Keep the background highlight visible */
-.nav-links a:hover::before,
-.nav-links a.active::before {
-  opacity: 1;
-}
-
-/* Prevent the fixed navbar from covering the page heading */
-.project-page .content-wrapper {
-  padding-top: 100px;
-}
-
-
-/* ==========================
-   Content Wrapper
-   ========================== */
-.content-wrapper {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 6vw;
-  padding-right: 6vw;
-}
-
-/* ==========================
-   Hero
-   ========================== */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  padding: 0;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at top left, rgba(0, 123, 255, 0.02), transparent 50%);
-  pointer-events: none;
-}
-
 .hero p {
-  font-size: 1.3rem;
-  color: #666;
   max-width: 600px;
+  color: #666;
+  font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.5;
 }
 
-/* Fix: Exclude emoji from gradient */
 .hero h1 .wave-emoji {
-  -webkit-text-fill-color: initial; /* Reset emoji color */
-  color: initial; /* Make emoji visible */
-  background: none; /* Remove background gradient from emoji */
   display: inline-block;
+  color: initial;
+  -webkit-text-fill-color: initial;
+  background: none;
   animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
 }
@@ -362,252 +222,389 @@ section {
   50% { transform: rotate(10deg); }
 }
 
-/* ==========================
-   Work Section
-   ========================== */
-.work {
-  padding: 8rem 0;
+/* 5. HOMEPAGE INTRO
+----------------------------------------- */
+
+.intro-layout {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 115px 5vw 45px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(20px, 3vw, 45px);
+}
+
+.intro-text {
   position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.intro-text h1 {
+  margin: 0 0 1rem;
+  padding: 0.1em 0.05em 0.2em;
+  font-family: 'Crafty Girls', cursive;
+  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  color: #d17c9a;
+  -webkit-text-fill-color: #d17c9a;
+  background: none;
+  letter-spacing: normal;
+  line-height: 1.3;
+  overflow: visible;
+}
+
+.intro-text p {
+  max-width: 500px;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* 6. POLAROID PINBOARD
+----------------------------------------- */
+
+.pinboard {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 400px;
+  overflow: visible;
+}
+
+.polaroid {
+  position: absolute;
+  width: 160px;
+  padding: 9px 9px 13px;
+  background: #fffdfb;
+  box-shadow: 2px 5px 15px rgba(70, 40, 50, 0.18);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.polaroid p {
+  margin: 10px 0 0;
+  color: #8d6175;
+  font-family: 'Crafty Girls', cursive;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.polaroid:active {
+  cursor: grabbing;
+}
+
+.polaroid.dragging {
+  z-index: 20;
+  box-shadow: 5px 12px 25px rgba(70, 40, 50, 0.25);
+}
+
+.photo-one {
+  top: 20px;
+  left: 6%;
+  transform: rotate(-9deg);
+}
+
+.photo-two {
+  top: 80px;
+  right: 4%;
+  transform: rotate(8deg);
+}
+
+.photo-three {
+  bottom: 0;
+  left: 24%;
+  transform: rotate(-4deg);
+}
+
+.sticker {
+  position: absolute;
+  z-index: 10;
+  color: #d17c9a;
+  font-size: 36px;
+  pointer-events: none;
+}
+
+.sticker-one {
+  top: 0;
+  right: 12%;
+  transform: rotate(15deg);
+}
+
+.sticker-two {
+  right: 2%;
+  bottom: 35px;
+  color: #e9b6c9;
+  transform: rotate(-12deg);
+}
+
+.sticker-three {
+  top: 48%;
+  left: 0;
+  color: #d9a6ba;
+}
+
+/* 7. WORK / PROJECT SECTIONS
+----------------------------------------- */
+
+.work {
+  position: relative;
+  width: 100%;
+  padding: 4rem 5vw 5rem;
 }
 
 .work::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.01), transparent 60%);
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(209, 124, 154, 0.025),
+    transparent 60%
+  );
   pointer-events: none;
 }
 
-.work h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #1a1a1a;
-}
-
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
-  width: 100%;
-}
-
-@media (max-width: 900px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-.work-card {
-  background: #fff;
-  border-radius: 24px;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+.work > * {
   position: relative;
 }
 
-.work-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  border-radius: 24px;
+#work {
+  scroll-margin-top: 90px;
 }
 
-.work-card:hover::before {
-  opacity: 1;
+.work .work-section-title {
+  margin: 0 0 2.5rem;
+  color: #d17c9a;
+  font-family: 'Crafty Girls', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.work .campaign-title {
+  margin-top: 5rem;
+}
+
+/* Project grid */
+
+.work-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.8rem 2rem;
+}
+
+.work-card-link {
+  display: block;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-card {
+  position: relative;
+  height: 100%;
+  overflow: visible;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.work-card::before {
+  display: none;
 }
 
 .work-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
   display: block;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.work-card:hover img {
-  transform: scale(1.05);
+  width: 100%;
+  height: 260px;
+  margin: 0 0 0.9rem;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .work-card h3,
 .work-card h4,
 .work-card h5 {
-  margin: 1.5rem 1.5rem 1rem;
-  font-size: 1.3rem;
-  font-weight: 600;
+  margin: 0 0 0.35rem;
+  padding: 0;
   color: #1a1a1a;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
   letter-spacing: -0.01em;
-  line-height: 1.3;
 }
 
 .work-card p {
-  margin: 0 1.5rem 2rem;
-  font-size: 1rem;
+  margin: 0;
+  padding: 0;
   color: #666;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.work-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 30px rgba(0, 0, 0, 0.08);
+.work-card-link:hover .work-card img {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.work-card-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
+/* 8. FOOTER
+----------------------------------------- */
 
-/* ==========================
-   Footer
-   ========================== */
 .footer {
-  text-align: center;
-  padding: 3rem 0;
-  font-size: 0.9rem;
+  width: 100%;
+  padding: 2.5rem 1rem;
   color: #999;
   background: linear-gradient(135deg, #fafafa, #f5f5f5);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  width: 100%;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-/* ==========================
-   Shared Project Page Styles
-   ========================== */
+.footer p {
+  margin: 0;
+}
+
+/* 9. SHARED PROJECT PAGE STYLES
+----------------------------------------- */
+
 .project-page .heading {
-  height: 70vh;
+  position: relative;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   margin-bottom: 2rem;
+  padding: 100px 6vw 30px;
+  text-align: center;
   animation: fadeUp 0.8s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
-  position: relative;
 }
 
 .project-page .heading::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), transparent 70%);
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
 .project-page .heading h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 700;
   margin-bottom: 1.5rem;
   color: #1a1a1a;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.2;
+}
+
+.project-page .heading p {
+  max-width: 700px;
+  color: #666;
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .project-page .heading::after {
-  content: "";
+  content: '';
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #0a84ff, #5ac8fa);
   margin: 2rem auto 0;
   border-radius: 2px;
+  background: linear-gradient(90deg, #d17c9a, #e9b6c9);
   animation: slideIn 0.6s ease-out forwards;
   animation-delay: 0.8s;
   transform: scaleX(0);
 }
 
-.project-page .card-bg p {
-  margin-bottom: 2rem; /* Add space between description and meta info */
-}
-
-.project-page .card-bg ul.meta {
-  margin-top: 0; /* Remove any top margin from the meta list */
-}
-
-@keyframes slideIn {
-  to { transform: scaleX(1); }
-}
-
-.project-page .heading p {
-  font-size: 1.8rem;
-  color: #666;
-  max-width: 700px;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
 .project-page .card-bg {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px) saturate(180%);
-  border: 10px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
-  padding: 2rem 2.5rem;
+  position: relative;
+  width: calc(100% - 2rem);
   max-width: 1000px;
-  margin: -3rem auto 4rem auto;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 80px;
+  height: auto;
+  max-height: none;
+  margin: -3rem auto 4rem;
+  padding: 2rem 2.5rem;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   animation: fadeUp 0.9s ease-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
-  position: relative;
-  min-height: 80px;
-  height: auto;
-  max-height: none; /* Remove the constraint temporarily */
 }
 
 .project-page .card-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 60%);
   border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 60%);
   pointer-events: none;
 }
 
-.project-page .card-bg:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
 .project-page .card-bg h2 {
-  font-size: 1.8rem;
   margin-bottom: 0.5rem;
   color: #1a1a1a;
+  font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
-/* Project Detail Box */
+.project-page .card-bg p {
+  margin-bottom: 1.5rem;
+}
+
+.project-page .card-bg ul.meta {
+  margin-top: 0;
+}
+
 .project-details-box {
+  max-width: 300px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
   background: rgba(248, 250, 252, 0.8);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(226, 232, 240, 0.5);
   border-radius: 16px;
-  padding: 1.5rem 2rem;
-  margin: 1.5rem 0;
-  max-width: 200px;
 }
 
 .detail-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 0.75rem;
   padding: 0.25rem 0;
 }
@@ -617,44 +614,45 @@ section {
 }
 
 .detail-item .label {
-  font-weight: 600;
-  color: #475569;
   min-width: 80px;
-  margin-right: 1.5rem;
-  font-size: 0.9rem;
+  margin-right: 1rem;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .detail-item .value {
-  color: #1e293b;
   flex: 1;
+  color: #1e293b;
   font-weight: 500;
 }
 
-/* Sections (Problem, Research, Ideation, Solution) */
+/* Project content sections */
+
 .project-page section.problem,
 .project-page section.userpersonas,
 .project-page section.research,
 .project-page section.ideation,
 .project-page section.prototyping,
 .project-page section.solution {
+  width: 100%;
+  max-width: 1000px;
   min-height: auto;
+  margin: 3rem auto;
   padding: 0 2rem;
+  position: relative;
   text-align: left;
   animation: fadeUp 1s ease-out forwards;
   animation-delay: 0.8s;
   opacity: 0;
-  max-width: 1000px;
-  margin: 3rem auto;
-  position: relative;
 }
 
 .project-page section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  margin-left: 2rem;
+  margin: 0 0 1.5rem;
   color: #1a1a1a;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -662,39 +660,48 @@ section {
 .project-page section p,
 .project-page section ul,
 .project-page section ol {
-  margin-left: 2rem;
+  margin: 0 0 1rem;
   color: #4a5568;
-  line-height: 1.7;
   font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .project-page section ul,
 .project-page section ol {
-  padding-left: 1.5rem; /* Space for bullets/numbers */
+  padding-left: 1.5rem;
 }
 
 .project-page section li {
   margin-bottom: 0.5rem;
   color: #4a5568;
-  line-height: 1.7;
   font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-/* Animation */
+/* 10. ANIMATIONS
+----------------------------------------- */
+
 @keyframes fadeUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(40px); 
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ==========================
-   Page-Specific Backgrounds
-   ========================== */
+@keyframes slideIn {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* 11. PROJECT PAGE BACKGROUNDS
+----------------------------------------- */
+
 .dreamteam-page {
   background: linear-gradient(180deg, #fdfdfd 0%, rgba(0, 123, 255, 0.03) 100%);
 }
@@ -711,78 +718,33 @@ section {
   background: linear-gradient(180deg, #fdfdfd 0%, rgba(145, 174, 146, 0.05) 100%);
 }
 
-/* ==========================
-   Responsive Design
-   ========================== */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 4vw;
-  }
-  
-  .nav-links {
-    gap: 1.5rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero p {
-    font-size: 1.1rem;
-  }
-  
-  .work {
-    padding: 6rem 0;
-  }
-  
-  .work h2 {
-    font-size: 2rem;
-  }
-  
-  .project-page .card-bg {
-    padding: 1.5rem;
-    margin: -2rem 1rem 3rem;
-  }
-  
-  .project-page section.problem,
-  .project-page section.userpersonas,
-  .project-page section.research,
-  .project-page section.ideation,
-  .project-page section.prototyping,
-  .project-page section.solution {
-    padding: 0 1rem;
-  }
-}
-
-/* ==========================
-   Micro-interactions
-   ========================== */
-@media (prefers-reduced-motion: no-preference) {
-  .work-card,
-  .project-page .card-bg,
-  .nav-links a {
-    will-change: transform;
-  }
-}
+/* 12. PROJECT IMAGES
+----------------------------------------- */
 
 .project-image {
-  max-width: 1000px; /* Match card width */
-  margin: 2rem auto 4rem auto; /* Space above and below */
+  width: calc(100% - 2rem);
+  max-width: 1000px;
+  margin: 2rem auto 4rem;
   text-align: center;
 }
 
 .project-image img {
+  display: block;
   width: 100%;
-  max-width: 1000px; /* Slightly smaller than container */
+  max-width: 1000px;
   height: auto;
+  margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
 .project-image img:hover {
-  transform: scale(1.02); /* Subtle hover effect */
+  transform: scale(1.01);
 }
+
+/* 13. IMAGE CAROUSEL
+----------------------------------------- */
 
 .carousel {
   position: relative;
@@ -797,35 +759,36 @@ section {
 
 .carousel-track {
   display: flex;
+  width: 100%;
   height: 100%;
   transition: transform 0.5s ease;
 }
 
 .carousel-track img {
-  flex: 0 0 100%;         /* full width per image */
-  height: 100%;           /* match carousel container height */
-  object-fit: contain;      /* cover container fully */
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
   border-radius: 20px;
 }
 
-/* Arrows */
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  padding: 0.5rem 1rem;
   border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
   font-size: 2rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background 0.3s;
+  transform: translateY(-50%);
+  transition: background 0.3s ease;
 }
 
 .carousel-btn:hover {
-  background: rgba(255, 255, 255, 1);
+  background: #fff;
 }
 
 .carousel-btn.prev {
@@ -836,94 +799,103 @@ section {
   right: 10px;
 }
 
-/* Responsive height */
-@media (max-width: 768px) {
-  .carousel {
-    height: 250px;
-  }
-}
-
-/* Make the image responsive */
-a img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Add hover effect */
-a img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
+/* 14. CONTENT CREATION & BRANDS
+----------------------------------------- */
 
 .content-creation-examples {
-  text-align: center;
   padding: 80px 20px;
-  background-color: #fafafa;
+  background: #fafafa;
+  text-align: center;
 }
 
-.content-creation-examples h2 {
-  font-size: 2rem;
+.content-creation-examples h2,
+.brands h2 {
   margin-bottom: 40px;
+  font-size: 2rem;
 }
 
-.content-creation-examples p {
+.content-creation-examples p,
+.brands p {
   max-width: 600px;
   margin: 0 auto 40px;
   color: #555;
 }
 
-/* Layout */
+.brands {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.content-creation-examples h2::after,
+.brands h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #d17c9a, #e9b6c9);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: slideIn 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.brand-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.brand img {
+  max-width: 180px;
+  max-height: 120px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.brand img:hover {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* 15. PHONE GALLERY
+----------------------------------------- */
+
 .phone-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-items: center;
+  gap: 40px;
   padding: 40px 0;
 }
 
-@media (max-width: 1200px) {
-  .phone-gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .phone-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .phone-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* --- Realistic iPhone Frame --- */
 .phone {
   position: relative;
   width: 220px;
   height: 440px;
-  border-radius: 40px;
   padding: 8px;
+  overflow: hidden;
+  border-radius: 40px;
   background: linear-gradient(145deg, #1a1a1a, #000);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Metallic rim around the phone */
 .phone::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  border-radius: 40px;
+  z-index: 2;
   padding: 3px;
+  border-radius: 40px;
   background: linear-gradient(135deg, #b5b5b5, #444, #222);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -933,235 +905,105 @@ a img:hover {
   pointer-events: none;
 }
 
-/* Screen Area */
 .phone-screen {
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 32px;
   overflow: hidden;
+  border-radius: 32px;
   background: #000;
-  position: relative;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .phone-screen video {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border: none;
-  display: block;
+  object-fit: cover;
 }
 
-/* Add subtle glass reflection */
 .phone-screen::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -40%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08), transparent 60%);
   pointer-events: none;
 }
 
-/* Notch */
 .notch {
   position: absolute;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  z-index: 3;
   width: 90px;
   height: 20px;
-  background: #000;
   border-radius: 10px;
-  z-index: 3;
+  background: #000;
   box-shadow: inset 0 -1px 2px rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
 }
 
-/* Side Buttons */
 .side-buttons.left::before,
 .side-buttons.right::before {
   content: '';
   position: absolute;
-  background: #333;
   border-radius: 2px;
+  background: #333;
 }
 
 .side-buttons.left::before {
-  left: -5px;
   top: 100px;
+  left: -5px;
   width: 4px;
   height: 40px;
 }
 
 .side-buttons.right::before {
-  right: -5px;
   top: 160px;
+  right: -5px;
   width: 4px;
   height: 60px;
 }
 
-/* Hover effect for realism */
 .phone:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1100px) {
-  .phone {
-    width: 200px;
-    height: 400px;
-  }
-}
+/* 16. CV SECTION
+----------------------------------------- */
 
-@media (max-width: 800px) {
-  .phone {
-    width: 160px;
-    height: 320px;
-  }
-  .phone-gallery {
-    gap: 24px;
-  }
-}
-
-.brands {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #fff;
-}
-
-.brands h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.brands p {
-  max-width: 600px;
-  margin: 0 auto 40px;
-  color: #555;
-}
-
-.brand-logos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  align-items: center;
-  justify-items: center;
-  padding: 20px 0;
-}
-
-@media (max-width: 1200px) {
-  .brand-logos { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 900px) {
-  .brand-logos { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .brand-logos { grid-template-columns: 1fr; }
-}
-
-
-.brand img {
-  max-width: 180px;
-  max-height: 120px;
-  object-fit: contain;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: grayscale(100%);
-  opacity: 0.7;
-}
-
-.brand img:hover {
-  transform: scale(1.2);
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-.content-creation-examples h2::after,
-.brands h2::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #0a84ff, #5ac8fa);
-  margin: 1rem auto 0;       /* Adjust spacing below the title */
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: slideIn 0.6s ease-out forwards;
-  animation-delay: 0.8s;
-}
-
-@keyframes slideIn {
-  to {
-    transform: scaleX(1);
-  }
-}
-
-
-.content-creation-examples {
-  background-color: #fafafa;
-}
-
-.brands {
-  background-color: #fff;
-}
-
-
-
-.logo-img {
-  width: 150px;
-  height: 150px;
-  display: block;
-  object-fit: contain;
-}
-
-
-.logo a {
-  display: inline-block;
-}
-
-
-
-.navbar .nav-links a.active {
-  font-family: 'Crafty Girls', cursive !important;
-  color: #d17c9a !important;
-  transform: translateY(-1px);
-}
-
-.navbar .nav-links a.active::before {
-  opacity: 1;
-}
-
-/* CV Section */
 .cv-section {
-  text-align: center;
-  padding: 3rem 1.5rem;
-  margin: 2rem auto;
   max-width: 700px;
+  margin: 2rem auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
 }
 
 .cv-section h2 {
-  font-family: 'Crafty Girls', cursive;
-  color: #d17c9a;
-  font-size: 2rem;
   margin-bottom: 1rem;
+  color: #d17c9a;
+  font-family: 'Crafty Girls', cursive;
+  font-size: 2rem;
 }
 
 .cv-section p {
-  font-family: 'Inter', sans-serif;
+  margin-bottom: 1.8rem;
   color: #555;
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 1.8rem;
 }
 
 .cv-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .cv-btn {
@@ -1175,8 +1017,7 @@ a img:hover {
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease,
-              transform 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .cv-btn:hover {
@@ -1195,7 +1036,294 @@ a img:hover {
   color: #fff;
 }
 
-@media (max-width: 480px) {
+/* 17. RESPONSIVE TABLET
+----------------------------------------- */
+
+@media (max-width: 1000px) {
+  .phone-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .phone {
+    width: 200px;
+    height: 400px;
+  }
+
+  .work-card img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation */
+
+  .navbar {
+    min-height: 58px;
+    padding: 5px 12px;
+    gap: 4px;
+  }
+
+  .navbar .logo-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .navbar .nav-links {
+    gap: 0;
+  }
+
+  .navbar .nav-links a {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  /* Homepage introduction */
+
+  .intro-layout {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding: 88px 5vw 25px;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .intro-text p {
+    margin: 0 auto;
+    font-size: 0.98rem;
+  }
+
+  .pinboard {
+    width: 100%;
+    max-width: 430px;
+    min-height: 350px;
+    margin: 0 auto;
+  }
+
+  .polaroid {
+    width: 140px;
+  }
+
+  .polaroid img {
+    height: 120px;
+  }
+
+  .photo-one {
+    top: 20px;
+    left: 4%;
+  }
+
+  .photo-two {
+    top: 55px;
+    right: 3%;
+  }
+
+  .photo-three {
+    bottom: 5px;
+    left: 24%;
+  }
+
+  .sticker {
+    font-size: 30px;
+  }
+
+  /* Work grid */
+
+  .work {
+    padding: 3rem 5vw 4rem;
+  }
+
+  .work .work-section-title {
+    margin-bottom: 2rem;
+    font-size: clamp(1.9rem, 5vw, 2.5rem);
+  }
+
+  .work .campaign-title {
+    margin-top: 3.5rem;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1rem;
+  }
+
+  .work-card img {
+    height: 190px;
+    border-radius: 13px;
+  }
+
+  .work-card h3,
+  .work-card h4,
+  .work-card h5 {
+    font-size: 1rem;
+  }
+
+  .work-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Other sections */
+
+  .hero {
+    min-height: 80vh;
+    padding: 100px 5vw 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 7vw, 3rem);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .project-page .card-bg {
+    width: calc(100% - 2rem);
+    margin: -2rem auto 3rem;
+    padding: 1.5rem;
+  }
+
+  .project-page section.problem,
+  .project-page section.userpersonas,
+  .project-page section.research,
+  .project-page section.ideation,
+  .project-page section.prototyping,
+  .project-page section.solution {
+    padding: 0 1.25rem;
+  }
+
+  .project-page section h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel {
+    width: 95%;
+  }
+
+  .phone-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .phone {
+    width: 160px;
+    height: 320px;
+  }
+
+  .brand-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 18. RESPONSIVE SMALL PHONES
+----------------------------------------- */
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: 5px 8px;
+    gap: 2px;
+  }
+
+  .navbar .logo-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar .nav-links {
+    gap: 0;
+  }
+
+  .navbar .nav-links a {
+    padding: 6px 5px;
+    font-size: 11px;
+  }
+
+  .intro-layout {
+    padding: 80px 4vw 20px;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+  }
+
+  .intro-text p {
+    font-size: 0.9rem;
+  }
+
+  .pinboard {
+    min-height: 300px;
+  }
+
+  .polaroid {
+    width: 120px;
+    padding: 7px 7px 10px;
+  }
+
+  .polaroid img {
+    height: 100px;
+  }
+
+  .polaroid p {
+    font-size: 12px;
+  }
+
+  .photo-one {
+    left: 3%;
+  }
+
+  .photo-two {
+    right: 2%;
+  }
+
+  .photo-three {
+    left: 22%;
+  }
+
+  .sticker {
+    font-size: 26px;
+  }
+
+  .work {
+    padding-right: 4vw;
+    padding-left: 4vw;
+  }
+
+  .work-grid {
+    gap: 1.5rem 0.75rem;
+  }
+
+  .work-card img {
+    height: 145px;
+    border-radius: 11px;
+  }
+
+  .work-card h3,
+  .work-card h4,
+  .work-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .work-card p {
+    font-size: 0.78rem;
+  }
+
+  .phone-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .phone {
+    width: 200px;
+    height: 400px;
+  }
+
   .cv-section {
     padding: 2rem 1rem;
   }
@@ -1206,859 +1334,50 @@ a img:hover {
   }
 
   .cv-btn {
-    box-sizing: border-box;
     width: 100%;
     max-width: 260px;
     text-align: center;
   }
 }
 
+/* 19. VERY NARROW SCREENS
+----------------------------------------- */
 
-/* UX/UI and Mock Campaign section headings */
-.work .work-section-title {
-  font-family: 'Crafty Girls', cursive;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  color: #d17c9a;
-  text-align: center;
-  letter-spacing: normal;
-  line-height: 1.4;
-  margin: 0 0 3rem;
-}
-
-/* Space between the two project categories */
-.work .campaign-title {
-  margin-top: 6rem;
-}
-
-/* Prevent the headings from being hidden behind the fixed navbar */
-#work {
-  scroll-margin-top: 110px;
-}
-
-/* Introduction and pinboard layout */
-.intro-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.intro-text {
-  position: relative;
-  z-index: 1;
-}
-
-.pinboard {
-  position: relative;
-  min-height: 440px;
-  overflow: visible;
-}
-
-/* Polaroid photos */
-.polaroid {
-  position: absolute;
-  width: 175px;
-  padding: 10px 10px 16px;
-  background: #fffdfb;
-  box-shadow: 2px 5px 15px rgba(70, 40, 50, 0.18);
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
-  transition: box-shadow 0.2s;
-}
-
-.polaroid img {
-  display: block;
-  width: 100%;
-  height: 155px;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.polaroid p {
-  margin: 12px 0 0;
-  color: #8d6175;
-  font-family: 'Crafty Girls', cursive;
-  font-size: 15px;
-  text-align: center;
-}
-
-.polaroid:active {
-  cursor: grabbing;
-}
-
-.polaroid.dragging {
-  box-shadow: 5px 12px 25px rgba(70, 40, 50, 0.25);
-}
-
-/* Individual photo positions */
-.photo-one {
-  top: 25px;
-  left: 8%;
-  transform: rotate(-9deg);
-}
-
-.photo-two {
-  top: 95px;
-  right: 5%;
-  transform: rotate(8deg);
-}
-
-.photo-three {
-  bottom: 5px;
-  left: 25%;
-  transform: rotate(-4deg);
-}
-
-/* Decorative stickers */
-.sticker {
-  position: absolute;
-  z-index: 10;
-  color: #d17c9a;
-  font-size: 42px;
-  pointer-events: none;
-}
-
-.sticker-one {
-  top: 5px;
-  right: 12%;
-  transform: rotate(15deg);
-}
-
-.sticker-two {
-  bottom: 45px;
-  right: 4%;
-  color: #e9b6c9;
-  transform: rotate(-12deg);
-}
-
-.sticker-three {
-  top: 48%;
-  left: 2%;
-  color: #d9a6ba;
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  .intro-layout {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .pinboard {
-    min-height: 390px;
-    width: 100%;
-    max-width: 430px;
-    margin: 0 auto;
-  }
-
-  .polaroid {
-    width: 145px;
-  }
-
-  .polaroid img {
-    height: 125px;
-  }
-}
-
-/* Keep page content clear of the fixed navigation bar */
-html {
-  scroll-padding-top: 110px;
-}
-
-.intro-layout {
-  padding-top: 40px;
-}
-
-#work {
-  scroll-margin-top: 110px;
-}
-
-.hero {
-  padding-top: 120px;
-}
-
-
-/* ==========================
-   FIXED NAVBAR & LOGO
-========================== */
-
-.navbar {
-  padding: 0.75rem 6vw;
-  min-height: 0;
-}
-
-.logo-img {
-  width: 85px;
-  height: 85px;
-  object-fit: contain;
-}
-
-
-/* ==========================
-   HOMEPAGE INTRO
-========================== */
-
-.intro-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  /* Clear the fixed navbar */
-  padding: 145px 6vw 60px;
-  min-height: 100vh;
-}
-
-.intro-text {
-  position: relative;
-  z-index: 1;
-}
-
-.intro-text h1 {
-  font-family: 'Crafty Girls', cursive;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 400;
-  color: #d17c9a;
-  background: none;
-  -webkit-text-fill-color: #d17c9a;
-  letter-spacing: normal;
-  line-height: 1.4;
-  padding: 0.1em 0.15em 0.25em;
-  margin-bottom: 1.5rem;
-  overflow: visible;
-}
-
-.intro-text p {
-  max-width: 550px;
-  font-size: 1.15rem;
-  color: #666;
-  line-height: 1.8;
-}
-
-
-/* ==========================
-   POLAROID PINBOARD
-   Preserve existing positions
-========================== */
-
-.pinboard {
-  position: relative;
-  min-height: 440px;
-  overflow: visible;
-}
-
-.polaroid {
-  touch-action: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.polaroid img {
-  pointer-events: none;
-}
-
-
-/* ==========================
-   WORK SECTION
-   Preserve original card styles
-========================== */
-
-#work {
-  scroll-margin-top: 110px;
-  padding: 6rem 6vw;
-}
-
-.work .work-section-title {
-  font-family: 'Crafty Girls', cursive;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  color: #d17c9a;
-  text-align: center;
-  letter-spacing: normal;
-  line-height: 1.4;
-  margin: 0 0 3rem;
-}
-
-.work .campaign-title {
-  margin-top: 6rem;
-}
-
-/* Keep the original work-card hover effects */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4rem;
-  width: 100%;
-}
-
-.work-card-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.work-card {
-  height: 100%;
-}
-
-
-/* ==========================
-   RESPONSIVE TABLET & MOBILE
-========================== */
-
-@media (max-width: 900px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .navbar {
-    padding: 0.6rem 4vw;
-  }
-
-  .logo-img {
-    width: 65px;
-    height: 65px;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .nav-links a {
-    padding: 0.4rem 0.5rem;
-    font-size: 0.85rem;
-  }
-
-  .intro-layout {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 110px 6vw 40px;
-    min-height: auto;
-  }
-
-  .intro-text {
-    text-align: center;
-  }
-
-  .intro-text h1 {
-    font-size: clamp(2.4rem, 9vw, 3.2rem);
-    margin-bottom: 1rem;
-  }
-
-  .intro-text p {
-    margin: 0 auto;
-    font-size: 1rem;
-  }
-
-  .pinboard {
-    min-height: 390px;
-    width: 100%;
-    max-width: 430px;
-    margin: 0 auto;
-  }
-
-  .polaroid {
-    width: 145px;
-  }
-
-  .polaroid img {
-    height: 125px;
-  }
-
-  .photo-one {
-    top: 25px;
-    left: 5%;
-  }
-
-  .photo-two {
-    top: 65px;
-    right: 3%;
-  }
-
-  .photo-three {
-    bottom: 20px;
-    left: 24%;
-  }
-
-  .sticker {
-    font-size: 32px;
-  }
-
-  #work {
-    padding: 4rem 5vw;
-  }
-
-  .work .work-section-title {
-    margin-bottom: 2rem;
-  }
-
-  .work .campaign-title {
-    margin-top: 4rem;
-  }
-
-  .work-card img {
-    height: 240px;
-  }
-}
-
-@media (max-width: 400px) {
-  .navbar {
-    padding: 0.5rem 3vw;
-  }
-
-  .logo-img {
-    width: 52px;
-    height: 52px;
-  }
-
-  .nav-links {
-    gap: 0.35rem;
-  }
-
-  .nav-links a {
-    padding: 0.35rem;
-    font-size: 0.75rem;
-  }
-
-  .intro-layout {
-    padding-top: 95px;
-  }
-
-  .pinboard {
-    min-height: 350px;
-  }
-
-  .polaroid {
-    width: 130px;
-  }
-
-  .polaroid img {
-    height: 112px;
-  }
-
-  #work {
-    padding-right: 4vw;
-    padding-left: 4vw;
-  }
-
-  .work-card img {
-    height: 200px;
-  }
-}
-
-
-/* =====================================
-   HOMEPAGE LAYOUT FIX
-   Add at the VERY END of style.css
-===================================== */
-
-/* Keep the navbar compact and all links visible */
-.navbar {
-  padding: 0.4rem 4vw;
-  min-height: 0;
-  gap: 1rem;
-}
-
-.logo {
-  flex: 0 0 auto;
-}
-
-.logo-img {
-  width: 58px;
-  height: 58px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(0.3rem, 1.5vw, 1.2rem);
-  margin-left: auto;
-  flex-wrap: nowrap;
-}
-
-.nav-links a {
-  padding: 0.35rem 0.45rem;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-/* Make the introduction fit the screen better */
-.intro-layout {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-  min-height: 0;
-  padding: 100px 5vw 35px;
-}
-
-.intro-text h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 1.25;
-  margin-bottom: 0.8rem;
-}
-
-.intro-text p {
-  font-size: 1rem;
-  line-height: 1.7;
-  max-width: 450px;
-}
-
-/* Reduce the size of the pinboard */
-.pinboard {
-  min-height: 340px;
-  min-width: 0;
-}
-
-.polaroid {
-  width: 145px;
-  padding: 8px 8px 12px;
-}
-
-.polaroid img {
-  height: 125px;
-}
-
-.polaroid p {
-  font-size: 13px;
-  margin-top: 8px;
-}
-
-.sticker {
-  font-size: 32px;
-}
-
-/* Compact work section */
-#work {
-  padding: 3rem 5vw 4rem;
-  scroll-margin-top: 75px;
-}
-
-.work .work-section-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  margin-bottom: 1.8rem;
-}
-
-.work .campaign-title {
-  margin-top: 3.5rem;
-}
-
-/* Two columns on larger screens */
-.work-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem 2rem;
-}
-
-/* Photos rounded; titles and descriptions separate below */
-.work-card-link {
-  display: block;
-  min-width: 0;
-  color: inherit;
-  text-decoration: none;
-}
-
-.work-card {
-  height: auto;
-  position: relative;
-  overflow: visible;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
-}
-
-.work-card::before {
-  display: none;
-}
-
-.work-card img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 16px;
-  margin: 0 0 0.8rem;
-  transform: none;
-}
-
-.work-card h3 {
-  margin: 0 0 0.3rem;
-  padding: 0;
-  font-size: 1.1rem;
-  line-height: 1.4;
-}
-
-.work-card p {
-  margin: 0;
-  padding: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.work-card:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.work-card-link:hover .work-card img {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Tablet and smaller screens */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.35rem 3vw;
-    gap: 0.4rem;
-  }
-
-  .logo-img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .nav-links {
-    gap: 0.15rem;
-  }
-
-  .nav-links a {
-    padding: 0.3rem 0.35rem;
-    font-size: 0.78rem;
-  }
-
-  .intro-layout {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 85px 5vw 25px;
-    min-height: 0;
-  }
-
-  .intro-text {
-    text-align: center;
-  }
-
-  .intro-text h1 {
-    font-size: clamp(2rem, 7vw, 2.8rem);
-    margin-bottom: 0.5rem;
-  }
-
-  .intro-text p {
-    font-size: 0.95rem;
-    margin: 0 auto;
-  }
-
-  .pinboard {
-    width: 100%;
-    max-width: 380px;
-    min-height: 320px;
-    margin: 0 auto;
-  }
-
-  .polaroid {
-    width: 135px;
-  }
-
-  .polaroid img {
-    height: 115px;
-  }
-
-  #work {
-    padding: 2.5rem 5vw 3rem;
-  }
-
-  .work-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem 1rem;
-  }
-
-  .work-card img {
-    height: 180px;
-  }
-
-  .work-card h3 {
-    font-size: 1rem;
-  }
-
-  .work-card p {
-    font-size: 0.85rem;
-  }
-}
-
-/* Small phones: prevent the navigation from overflowing */
-@media (max-width: 380px) {
-  .navbar {
-    gap: 0.15rem;
-    padding-right: 2vw;
-    padding-left: 2vw;
-  }
-
-  .logo-img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .nav-links {
+    padding-right: 5px;
+    padding-left: 5px;
     gap: 0;
   }
 
-  .nav-links a {
-    padding: 0.25rem;
-    font-size: 0.72rem;
-  }
-
-  .intro-layout {
-    padding-top: 75px;
-  }
-
-  .pinboard {
-    min-height: 290px;
-  }
-
-  .polaroid {
-    width: 120px;
-  }
-
-  .polaroid img {
-    height: 100px;
-  }
-
-  .work-grid {
-    gap: 1.5rem 0.75rem;
-  }
-
-  .work-card img {
-    height: 145px;
-    border-radius: 12px;
-  }
-
-  .work-card h3 {
-    font-size: 0.9rem;
-  }
-
-  .work-card p {
-    font-size: 0.8rem;
-  }
-}
-
-
-/* =====================================
-   FINAL NAVBAR FIX
-   Keep Work, About and Contact visible
-===================================== */
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 0;
-  padding: 8px 4vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(20px);
-  z-index: 1000;
-}
-
-.navbar .logo {
-  flex: 0 0 auto;
-  min-width: 0;
-}
-
-.navbar .logo-img {
-  display: block;
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-}
-
-.navbar .nav-links {
-  display: flex;
-  flex: 0 1 auto;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(4px, 1.5vw, 18px);
-  margin: 0 0 0 auto;
-  padding: 0;
-  list-style: none;
-  min-width: 0;
-}
-
-.navbar .nav-links li {
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar .nav-links a {
-  display: inline-block;
-  padding: 8px clamp(4px, 0.8vw, 10px);
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(12px, 1.2vw, 15px);
-  line-height: 1.4;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-/* Smaller screens */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 6px 10px;
-    gap: 4px;
-  }
-
-  .navbar .logo-img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .navbar .nav-links {
-    gap: 0;
-  }
-
-  .navbar .nav-links a {
-    padding: 7px 6px;
-    font-size: 12px;
-  }
-}
-
-/* Very narrow screens */
-@media (max-width: 340px) {
   .navbar .logo-img {
     width: 32px;
     height: 32px;
   }
 
   .navbar .nav-links a {
-    padding: 6px 4px;
-    font-size: 11px;
+    padding: 5px 4px;
+    font-size: 10px;
+  }
+
+  .work-card img {
+    height: 120px;
   }
 }
 
-/* Keep the homepage content below the fixed navbar */
-.intro-layout {
-  padding-top: max(100px, 12vh);
+/* 20. ACCESSIBILITY
+----------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
-html {
-  scroll-padding-top: 80px;
-}
-
-#work {
-  scroll-margin-top: 80px;
-}
-
-
