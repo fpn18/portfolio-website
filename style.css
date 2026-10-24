@@ -1214,3 +1214,7 @@ html {
 #work {
   scroll-margin-top: 110px;
 }
+
+.hero {
+  padding-top: 120px;
+}
