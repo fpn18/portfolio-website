@@ -1811,3 +1811,40 @@ body {
   padding-right: 8%;
 }
 
+
+/* Reduce space taken up by the navbar */
+.navbar {
+  top: 8px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Move the page content up */
+.content-wrapper {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Reduce extra space above the hero text */
+.hero {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+/* Keep the footer spacing unchanged */
+.footer {
+  margin-top: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    padding-top: 12px;
+  }
+}
+
