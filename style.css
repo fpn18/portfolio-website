@@ -1745,3 +1745,61 @@ body {
 }
 
 
+/* Full-page layout fix */
+html {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Navbar stays at the top */
+.navbar {
+  flex: 0 0 auto;
+}
+
+/* Main content uses the full page width */
+.content-wrapper {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  flex: 1 0 auto;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Sections span the available width */
+.hero,
+.work,
+.cv-section {
+  width: 100%;
+  max-width: none;
+}
+
+/* Footer spans the full width and moves down */
+.footer {
+  width: 100%;
+  max-width: none;
+  margin-top: auto;
+  margin-left: 0;
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
