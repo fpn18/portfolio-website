@@ -1654,3 +1654,300 @@ html {
     height: 200px;
   }
 }
+
+
+/* =====================================
+   HOMEPAGE LAYOUT FIX
+   Add at the VERY END of style.css
+===================================== */
+
+/* Keep the navbar compact and all links visible */
+.navbar {
+  padding: 0.4rem 4vw;
+  min-height: 0;
+  gap: 1rem;
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.logo-img {
+  width: 58px;
+  height: 58px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.3rem, 1.5vw, 1.2rem);
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+.nav-links a {
+  padding: 0.35rem 0.45rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Make the introduction fit the screen better */
+.intro-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  padding: 100px 5vw 35px;
+}
+
+.intro-text h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 450px;
+}
+
+/* Reduce the size of the pinboard */
+.pinboard {
+  min-height: 340px;
+  min-width: 0;
+}
+
+.polaroid {
+  width: 145px;
+  padding: 8px 8px 12px;
+}
+
+.polaroid img {
+  height: 125px;
+}
+
+.polaroid p {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.sticker {
+  font-size: 32px;
+}
+
+/* Compact work section */
+#work {
+  padding: 3rem 5vw 4rem;
+  scroll-margin-top: 75px;
+}
+
+.work .work-section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  margin-bottom: 1.8rem;
+}
+
+.work .campaign-title {
+  margin-top: 3.5rem;
+}
+
+/* Two columns on larger screens */
+.work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
+}
+
+/* Photos rounded; titles and descriptions separate below */
+.work-card-link {
+  display: block;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-card {
+  height: auto;
+  position: relative;
+  overflow: visible;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.work-card::before {
+  display: none;
+}
+
+.work-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 0 0.8rem;
+  transform: none;
+}
+
+.work-card h3 {
+  margin: 0 0 0.3rem;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.work-card p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.work-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.work-card-link:hover .work-card img {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.35rem 3vw;
+    gap: 0.4rem;
+  }
+
+  .logo-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-links {
+    gap: 0.15rem;
+  }
+
+  .nav-links a {
+    padding: 0.3rem 0.35rem;
+    font-size: 0.78rem;
+  }
+
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 85px 5vw 25px;
+    min-height: 0;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .intro-text p {
+    font-size: 0.95rem;
+    margin: 0 auto;
+  }
+
+  .pinboard {
+    width: 100%;
+    max-width: 380px;
+    min-height: 320px;
+    margin: 0 auto;
+  }
+
+  .polaroid {
+    width: 135px;
+  }
+
+  .polaroid img {
+    height: 115px;
+  }
+
+  #work {
+    padding: 2.5rem 5vw 3rem;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1rem;
+  }
+
+  .work-card img {
+    height: 180px;
+  }
+
+  .work-card h3 {
+    font-size: 1rem;
+  }
+
+  .work-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small phones: prevent the navigation from overflowing */
+@media (max-width: 380px) {
+  .navbar {
+    gap: 0.15rem;
+    padding-right: 2vw;
+    padding-left: 2vw;
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a {
+    padding: 0.25rem;
+    font-size: 0.72rem;
+  }
+
+  .intro-layout {
+    padding-top: 75px;
+  }
+
+  .pinboard {
+    min-height: 290px;
+  }
+
+  .polaroid {
+    width: 120px;
+  }
+
+  .polaroid img {
+    height: 100px;
+  }
+
+  .work-grid {
+    gap: 1.5rem 0.75rem;
+  }
+
+  .work-card img {
+    height: 145px;
+    border-radius: 12px;
+  }
+
+  .work-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .work-card p {
+    font-size: 0.8rem;
+  }
+}
+
