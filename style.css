@@ -1876,3 +1876,54 @@ body {
 }
 
 
+/* Social icons in the navbar */
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: #C75B87;
+  background: #FBE0EA;
+  border: 1px solid #F3C5D6;
+
+  font-size: 1.25rem;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.nav-socials a:hover {
+  color: #FFFFFF;
+  background: #D979A0;
+  border-color: #D979A0;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(180, 90, 125, 0.18);
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+  .navbar {
+    gap: 8px;
+  }
+
+  .nav-socials {
+    gap: 5px;
+  }
+
+  .nav-socials a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+}
+
