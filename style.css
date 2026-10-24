@@ -310,7 +310,8 @@ section {
 }
 
 .polaroid.dragging {
-  z-index: 20;
+  z-index: 100;
+  cursor: grabbing;
   box-shadow: 5px 12px 25px rgba(70, 40, 50, 0.25);
 }
 
