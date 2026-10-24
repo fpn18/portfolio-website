@@ -1848,3 +1848,30 @@ body {
   }
 }
 
+
+/* Keep navbar links in the same font and colour */
+.nav-links a,
+.nav-links a:visited,
+.nav-links a:focus {
+  color: #66384B;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+}
+
+/* Hover and active link styling */
+.nav-links a:hover,
+.nav-links a:active,
+.nav-links a.active {
+  background: #EFA9C5;
+  color: #54253A;
+  border-radius: 999px;
+}
+
+/* Smooth transitions */
+.nav-links a {
+  transition: background-color 0.25s ease,
+              color 0.25s ease,
+              transform 0.25s ease;
+}
+
+
