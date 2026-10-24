@@ -1201,3 +1201,16 @@ a img:hover {
     height: 125px;
   }
 }
+
+/* Keep page content clear of the fixed navigation bar */
+html {
+  scroll-padding-top: 110px;
+}
+
+.intro-layout {
+  padding-top: 40px;
+}
+
+#work {
+  scroll-margin-top: 110px;
+}
