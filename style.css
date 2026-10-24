@@ -475,6 +475,7 @@ section {
 .work-card h3,
 .work-card h4,
 .work-card h5 {
+  text-align: center;
   margin: 0 0 0.35rem;
   padding: 0;
   color: #1a1a1a;
