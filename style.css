@@ -490,6 +490,7 @@ section {
   color: #666;
   font-size: 0.95rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .work-card-link:hover .work-card img {
