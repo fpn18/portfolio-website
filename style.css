@@ -448,7 +448,7 @@ section {
 
 .work-card {
   position: relative;
-  height: 100%;
+  min-height: 320px;
   overflow: visible;
   padding: 0;
   background: transparent;
