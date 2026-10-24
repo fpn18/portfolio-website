@@ -1804,9 +1804,10 @@ body {
 }
 
 
-/* Align hero section text to the right */
+/* Move the entire hero content to the right */
 .hero {
-  text-align: right;
+  text-align: left;
+  padding-left: 15%;
   padding-right: 8%;
-  padding-left: 8%;
 }
+
