@@ -214,3 +214,69 @@ document.querySelectorAll('.polaroid').forEach((photo) => {
     photo.classList.remove('dragging');
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const polaroids = document.querySelectorAll(".polaroid");
+
+  polaroids.forEach((polaroid) => {
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let originalLeft = 0;
+    let originalTop = 0;
+
+    polaroid.addEventListener("pointerdown", (event) => {
+      // Only drag with the main mouse button
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+
+      isDragging = true;
+
+      const rect = polaroid.getBoundingClientRect();
+
+      startX = event.clientX;
+      startY = event.clientY;
+      originalLeft = rect.left;
+      originalTop = rect.top;
+
+      // Keep the polaroid above the others while dragging
+      polaroids.forEach((item) => {
+        item.style.zIndex = "1";
+      });
+      polaroid.style.zIndex = "100";
+
+      // Switch from its original position to movable coordinates
+      polaroid.style.position = "fixed";
+      polaroid.style.left = `${rect.left}px`;
+      polaroid.style.top = `${rect.top}px`;
+      polaroid.style.right = "auto";
+      polaroid.style.bottom = "auto";
+      polaroid.style.margin = "0";
+
+      polaroid.classList.add("dragging");
+      polaroid.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+
+    polaroid.addEventListener("pointermove", (event) => {
+      if (!isDragging) return;
+
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+
+      polaroid.style.left = `${originalLeft + dx}px`;
+      polaroid.style.top = `${originalTop + dy}px`;
+    });
+
+    function stopDragging() {
+      if (!isDragging) return;
+
+      isDragging = false;
+      polaroid.classList.remove("dragging");
+    }
+
+    polaroid.addEventListener("pointerup", stopDragging);
+    polaroid.addEventListener("pointercancel", stopDragging);
+  });
+});
+
