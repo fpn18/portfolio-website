@@ -172,111 +172,57 @@ document.addEventListener("DOMContentLoaded", () => {
   videos.forEach(video => observer.observe(video));
 });
 
-document.querySelectorAll('.polaroid').forEach((photo) => {
-  let startX = 0;
-  let startY = 0;
-  let offsetX = 0;
-  let offsetY = 0;
-
-  photo.addEventListener('pointerdown', (event) => {
-    event.preventDefault();
-
-    const rect = photo.getBoundingClientRect();
-
-    startX = event.clientX;
-    startY = event.clientY;
-    offsetX = 0;
-    offsetY = 0;
-
-    photo.classList.add('dragging');
-    photo.style.zIndex = Date.now();
-    photo.setPointerCapture(event.pointerId);
-  });
-
-  photo.addEventListener('pointermove', (event) => {
-    if (!photo.classList.contains('dragging')) return;
-
-    offsetX = event.clientX - startX;
-    offsetY = event.clientY - startY;
-
-    photo.style.left = `calc(${getComputedStyle(photo).left} + ${offsetX}px)`;
-    photo.style.top = `calc(${getComputedStyle(photo).top} + ${offsetY}px)`;
-
-    startX = event.clientX;
-    startY = event.clientY;
-  });
-
-  photo.addEventListener('pointerup', () => {
-    photo.classList.remove('dragging');
-  });
-
-  photo.addEventListener('pointercancel', () => {
-    photo.classList.remove('dragging');
-  });
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const polaroids = document.querySelectorAll(".polaroid");
 
-  polaroids.forEach((polaroid) => {
-    let isDragging = false;
+  polaroids.forEach((photo) => {
+    let dragging = false;
     let startX = 0;
     let startY = 0;
-    let originalLeft = 0;
-    let originalTop = 0;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    polaroid.addEventListener("pointerdown", (event) => {
-      // Only drag with the main mouse button
+    photo.addEventListener("pointerdown", (event) => {
       if (event.pointerType === "mouse" && event.button !== 0) return;
 
-      isDragging = true;
-
-      const rect = polaroid.getBoundingClientRect();
-
+      dragging = true;
       startX = event.clientX;
       startY = event.clientY;
-      originalLeft = rect.left;
-      originalTop = rect.top;
 
-      // Keep the polaroid above the others while dragging
-      polaroids.forEach((item) => {
-        item.style.zIndex = "1";
-      });
-      polaroid.style.zIndex = "100";
+      // Preserve the current position if already moved
+      offsetX = parseFloat(photo.dataset.offsetX || "0");
+      offsetY = parseFloat(photo.dataset.offsetY || "0");
 
-      // Switch from its original position to movable coordinates
-      polaroid.style.position = "fixed";
-      polaroid.style.left = `${rect.left}px`;
-      polaroid.style.top = `${rect.top}px`;
-      polaroid.style.right = "auto";
-      polaroid.style.bottom = "auto";
-      polaroid.style.margin = "0";
+      photo.classList.add("dragging");
+      photo.style.zIndex = "100";
+      photo.setPointerCapture(event.pointerId);
 
-      polaroid.classList.add("dragging");
-      polaroid.setPointerCapture(event.pointerId);
       event.preventDefault();
     });
 
-    polaroid.addEventListener("pointermove", (event) => {
-      if (!isDragging) return;
+    photo.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
 
-      const dx = event.clientX - startX;
-      const dy = event.clientY - startY;
+      const newX = offsetX + event.clientX - startX;
+      const newY = offsetY + event.clientY - startY;
 
-      polaroid.style.left = `${originalLeft + dx}px`;
-      polaroid.style.top = `${originalTop + dy}px`;
+      // Use CSS translate so any existing rotation stays intact
+      photo.style.translate = `${newX}px ${newY}px`;
     });
 
     function stopDragging() {
-      if (!isDragging) return;
+      if (!dragging) return;
 
-      isDragging = false;
-      polaroid.classList.remove("dragging");
+      const values = photo.style.translate.split(" ");
+      photo.dataset.offsetX = parseFloat(values[0]) || 0;
+      photo.dataset.offsetY = parseFloat(values[1]) || 0;
+
+      dragging = false;
+      photo.classList.remove("dragging");
     }
 
-    polaroid.addEventListener("pointerup", stopDragging);
-    polaroid.addEventListener("pointercancel", stopDragging);
+    photo.addEventListener("pointerup", stopDragging);
+    photo.addEventListener("pointercancel", stopDragging);
   });
 });
-
