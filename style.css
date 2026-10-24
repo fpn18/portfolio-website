@@ -1927,3 +1927,21 @@ body {
   }
 }
 
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  color: #C75B87;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-icon:hover {
+  color: #D979A0;
+  transform: translateY(-2px);
+}
+
+
