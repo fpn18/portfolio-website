@@ -354,23 +354,35 @@ section {
   pointer-events: none;
 }
 
+.sticker {
+  position: absolute;
+  z-index: 10;
+  color: #d17c9a;
+  font-size: 36px;
+  pointer-events: none;
+}
+
 .sticker-one {
-  top: 0;
-  right: 12%;
+  top: 5px;
+  left: 28%;
+  right: auto;
   transform: rotate(15deg);
 }
 
 .sticker-two {
-  right: 2%;
-  bottom: 35px;
+  top: 175px;
+  right: 0;
+  bottom: auto;
   color: #e9b6c9;
   transform: rotate(-12deg);
 }
 
 .sticker-three {
-  top: 48%;
+  top: 190px;
   left: 0;
+  right: auto;
   color: #d9a6ba;
+  transform: rotate(-8deg);
 }
 
 
