@@ -825,3 +825,71 @@ section {
     font-size: 1.2rem;
   }
 }
+
+
+/* Make the work card itself invisible */
+.work .work-card,
+.work .work-card-link .work-card {
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  transform: none;
+}
+
+/* Remove any decorative card overlays */
+.work .work-card::before,
+.work .work-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Round only the photo */
+.work .work-card img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px !important;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+/* Text sits outside the photo, underneath it */
+.work .work-card h3 {
+  display: block;
+  background: transparent !important;
+  margin: 0 0 0.35rem;
+  padding: 0 !important;
+  color: #1a1a1a;
+}
+
+.work .work-card p {
+  display: block;
+  background: transparent !important;
+  margin: 0;
+  padding: 0 !important;
+  color: #777;
+}
+
+/* Hover effect on photo only */
+.work .work-card-link:hover .work-card {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+}
+
+.work .work-card-link:hover .work-card img {
+  transform: translateY(-4px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .work .work-card img {
+    height: 240px;
+    border-radius: 16px !important;
+  }
+}
