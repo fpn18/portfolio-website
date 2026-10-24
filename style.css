@@ -267,11 +267,15 @@ section {
 /* 6. POLAROID PINBOARD
 ----------------------------------------- */
 
+
+/* 6. POLAROID PINBOARD
+----------------------------------------- */
+
 .pinboard {
   position: relative;
   width: 100%;
   min-width: 0;
-  min-height: 400px;
+  min-height: 440px;
   overflow: visible;
 }
 
@@ -315,24 +319,33 @@ section {
   box-shadow: 5px 12px 25px rgba(70, 40, 50, 0.25);
 }
 
+/* Evenly balanced scrapbook arrangement */
+
 .photo-one {
   top: 20px;
-  left: 6%;
-  transform: rotate(-9deg);
+  left: 2%;
+  right: auto;
+  bottom: auto;
+  transform: rotate(-6deg);
 }
 
 .photo-two {
-  top: 80px;
-  right: 4%;
-  transform: rotate(8deg);
+  top: 20px;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%) rotate(4deg);
 }
 
 .photo-three {
-  bottom: 0;
-  left: 24%;
-  transform: rotate(-4deg);
+  top: 20px;
+  left: auto;
+  right: 2%;
+  bottom: auto;
+  transform: rotate(-3deg);
 }
 
+/* Decorative stickers */
 .sticker {
   position: absolute;
   z-index: 10;
@@ -359,6 +372,7 @@ section {
   left: 0;
   color: #d9a6ba;
 }
+
 
 /* 7. WORK / PROJECT SECTIONS
 ----------------------------------------- */
