@@ -1699,3 +1699,49 @@ section {
 }
 
 
+/* Make the whole page fill the screen */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep the navbar at its natural height */
+.navbar {
+  flex-shrink: 0;
+}
+
+/* Let the content fill the available width and height */
+.content-wrapper {
+  width: 100%;
+  max-width: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Keep sections properly spaced */
+.hero,
+.work,
+.cv-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Push the footer to the bottom and stretch it across */
+.footer {
+  width: 100%;
+  margin-top: auto;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+
