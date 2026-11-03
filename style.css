@@ -2156,3 +2156,11 @@ body {
         font-size: 0.85rem;
     }
 }
+
+.content-wrapper > section {
+  max-width: 900px;   /* match the width of your Overview card */
+  margin: 0 auto 40px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  text-align: left;
+}
